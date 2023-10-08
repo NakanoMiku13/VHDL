@@ -1,0 +1,437 @@
+Analysis & Synthesis report for ALU
+Sun Oct  1 15:43:04 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "FullAdder:Add"
+ 10. Port Connectivity Checks: "Multiplier:Multi"
+ 11. Port Connectivity Checks: "FullAdder:Substract"
+ 12. Port Connectivity Checks: "FullAdder:Adder"
+ 13. Port Connectivity Checks: "ArithmeticShiftRight:ArithShifter"
+ 14. Port Connectivity Checks: "LeftShifter:LeftShift"
+ 15. Port Connectivity Checks: "RightShifter:RightShift"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Oct  1 15:43:04 2023          ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; ALU                                            ;
+; Top-level Entity Name              ; ALU                                            ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 0                                              ;
+;     Total combinational functions  ; 0                                              ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 39                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                            ; ALU                ; ALU                ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; ALU.vhd                          ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd                  ;         ;
+; LeftShifter.vhd                  ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/Projects/ALU/LeftShifter.vhd          ;         ;
+; RightShifter.vhd                 ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/Projects/ALU/RightShifter.vhd         ;         ;
+; FullAdder.vhd                    ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/Projects/ALU/FullAdder.vhd            ;         ;
+; ArithmeticShiftRight.vhd         ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/Projects/ALU/ArithmeticShiftRight.vhd ;         ;
+; Multiplier.vhd                   ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/Projects/ALU/Multiplier.vhd           ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+;                                             ;                      ;
+; Total combinational functions               ; 0                    ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 0                    ;
+;     -- 3 input functions                    ; 0                    ;
+;     -- <=2 input functions                  ; 0                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 0                    ;
+;     -- arithmetic mode                      ; 0                    ;
+;                                             ;                      ;
+; Total registers                             ; 0                    ;
+;     -- Dedicated logic registers            ; 0                    ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 39                   ;
+;                                             ;                      ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; selectorOperation[0] ;
+; Maximum fan-out                             ; 1                    ;
+; Total fan-out                               ; 39                   ;
+; Average fan-out                             ; 0.50                 ;
++---------------------------------------------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |ALU                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |ALU                ; ALU         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder:Add"                                                                              ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; b[9..1]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[0]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; initialcarry ; Input  ; Info     ; Stuck at GND                                                                        ;
+; result       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplier:Multi"                                                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder:Substract"                                                                        ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; initialcarry ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; result       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder:Adder"                                                                            ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; initialcarry ; Input  ; Info     ; Stuck at GND                                                                        ;
+; result       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ArithmeticShiftRight:ArithShifter"                                                               ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; shiftamount[1..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; shiftamount[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LeftShifter:LeftShift"                                                                           ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; shiftamount[1..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; shiftamount[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RightShifter:RightShift"                                                                         ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; shiftamount[1..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; shiftamount[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 39                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Sun Oct  1 15:42:58 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
+    Info (12022): Found design unit 1: ALU-ArchAlu File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 13
+    Info (12023): Found entity 1: ALU File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file LeftShifter.vhd
+    Info (12022): Found design unit 1: LeftShifter-LeftShifterArch File: /mnt/External/Codigos/VHDL/Projects/ALU/LeftShifter.vhd Line: 14
+    Info (12023): Found entity 1: LeftShifter File: /mnt/External/Codigos/VHDL/Projects/ALU/LeftShifter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file RightShifter.vhd
+    Info (12022): Found design unit 1: RightShifter-RightShifterArch File: /mnt/External/Codigos/VHDL/Projects/ALU/RightShifter.vhd Line: 14
+    Info (12023): Found entity 1: RightShifter File: /mnt/External/Codigos/VHDL/Projects/ALU/RightShifter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FullAdder.vhd
+    Info (12022): Found design unit 1: FullAdder-AdderArch File: /mnt/External/Codigos/VHDL/Projects/ALU/FullAdder.vhd Line: 11
+    Info (12023): Found entity 1: FullAdder File: /mnt/External/Codigos/VHDL/Projects/ALU/FullAdder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ArithmeticShiftRight.vhd
+    Info (12022): Found design unit 1: ArithmeticShiftRight-ASRArch File: /mnt/External/Codigos/VHDL/Projects/ALU/ArithmeticShiftRight.vhd Line: 11
+    Info (12023): Found entity 1: ArithmeticShiftRight File: /mnt/External/Codigos/VHDL/Projects/ALU/ArithmeticShiftRight.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file Multiplier.vhd
+    Info (12022): Found design unit 1: Multiplier-ArchMultiplier File: /mnt/External/Codigos/VHDL/Projects/ALU/Multiplier.vhd Line: 9
+    Info (12023): Found entity 1: Multiplier File: /mnt/External/Codigos/VHDL/Projects/ALU/Multiplier.vhd Line: 3
+Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ALU.vhd(9): used implicit default value for signal "output" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+Warning (10540): VHDL Signal Declaration warning at ALU.vhd(64): used explicit default value for signal "shifterAmount" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 64
+Warning (10036): Verilog HDL or VHDL warning at ALU.vhd(70): object "logicResult" assigned a value but never read File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at ALU.vhd(143): signal "comp2Result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 143
+Warning (10492): VHDL Process Statement warning at ALU.vhd(160): signal "arithShifterRightResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at ALU.vhd(166): signal "adderResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at ALU.vhd(168): signal "substractionResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at ALU.vhd(170): signal "multiplierResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 170
+Info (12128): Elaborating entity "RightShifter" for hierarchy "RightShifter:RightShift" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 72
+Info (12128): Elaborating entity "LeftShifter" for hierarchy "LeftShifter:LeftShift" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 81
+Info (12128): Elaborating entity "ArithmeticShiftRight" for hierarchy "ArithmeticShiftRight:ArithShifter" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at ArithmeticShiftRight.vhd(17): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/ArithmeticShiftRight.vhd Line: 17
+Info (12128): Elaborating entity "FullAdder" for hierarchy "FullAdder:Adder" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 97
+Warning (10631): VHDL Process Statement warning at FullAdder.vhd(18): inferring latch(es) for signal or variable "HalfAdder", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/Projects/ALU/FullAdder.vhd Line: 18
+Info (12128): Elaborating entity "Multiplier" for hierarchy "Multiplier:Multi" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at Multiplier.vhd(33): signal "product" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/Projects/ALU/Multiplier.vhd Line: 33
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output[0]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[1]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[2]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[3]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[4]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[5]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[6]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[7]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[8]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+    Warning (13410): Pin "output[9]" is stuck at GND File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 9
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 29 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "selectorOperation[0]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 6
+    Warning (15610): No output dependent on input pin "selectorOperation[1]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 6
+    Warning (15610): No output dependent on input pin "selectorOperation[2]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 6
+    Warning (15610): No output dependent on input pin "selectorOption[0]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "selectorOption[1]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "selectorOption[2]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "selectorOption[3]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "inputA[0]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[1]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[2]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[3]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[4]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[5]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[6]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[7]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[8]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputA[9]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[0]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[1]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[2]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[3]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[4]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[5]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[6]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[7]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[8]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "inputB[9]" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 8
+    Warning (15610): No output dependent on input pin "clock" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 10
+    Warning (15610): No output dependent on input pin "reset" File: /mnt/External/Codigos/VHDL/Projects/ALU/ALU.vhd Line: 10
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 29 input pins
+    Info (21059): Implemented 10 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 410 megabytes
+    Info: Processing ended: Sun Oct  1 15:43:04 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
+
+

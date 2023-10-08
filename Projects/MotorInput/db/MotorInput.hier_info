@@ -1,0 +1,9 @@
+|MotorInput
+A => process_0.IN0
+A => left.DATAB
+B => process_0.IN1
+B => right.DATAB
+left <= left.DB_MAX_OUTPUT_PORT_TYPE
+right <= right.DB_MAX_OUTPUT_PORT_TYPE
+
+

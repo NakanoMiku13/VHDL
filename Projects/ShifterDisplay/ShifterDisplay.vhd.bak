@@ -1,0 +1,66 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity ShifterDisplay is
+	Port(
+		message : in std_logic_vector(126 downto 0);
+		digits : out std_logic_vector(3 downto 0);
+		clock, reset : in std_logic;
+		segments : out std_logic_vector(6 downto 0));
+end ShifterDisplay;
+architecture ArchShifterDisplay of ShifterDisplay is
+	signal tempMessage : std_logic_vector(126 downto 0) := message;
+	signal newClock : std_logic;
+	signal digitsDisplay : std_logic_vector(3 downto 0) := (others => '1');
+begin
+	-- Frecuency divisor
+	process(clock, reset)
+		variable counter : integer := 0;
+	begin
+		if reset = '0' then
+			counter := 0;
+		elsif rising_edge(clock) then
+			if counter = 5000 then
+				counter := 0;
+				newClock <= not newClock;
+			else
+				counter := counter + 1;
+			end if;
+		end if;
+		clock <= newClock;
+	end process;
+	
+	
+	-- Display message
+	process(newClock, reset)
+		variable counter : integer := 0;
+		variable segmenter : integer := 126;
+	begin
+		if reset = '0' then
+			tempMessage <= message;
+			counter := 0;
+		elsif rising_edge(newClock) then
+			if segmenter > 0 then
+				if counter < 5000 then
+					digitsDisplay <= not "1000";
+					segments <= not tempMessage(segmenter downto segmenter - 7);
+					segmenter := segmenter - 7;
+				elsif counter < 10000 then
+					digitsDisplay <= not "0100";
+					segments <= not tempMessage(segmenter downto segmenter - 7);
+					segmenter := segmenter - 7;
+				elsif counter < 15000 then
+					digitsDisplay <= not "0010";
+					segments <= not tempMessage(segmenter downto segmenter - 7);
+					segmenter := segmenter - 7;
+				elsif counter < 20000 then
+					digitsDisplay <= not "0001";
+					segments <= not tempMessage(segmenter downto segmenter - 7);
+					segmenter := segmenter - 7;
+				elsif counter > 50000 then
+					counter := 0;
+				end if;
+				counter := counter + 1;
+			end if;
+		end if;
+	end process;
+end ArchShifterDisplay;

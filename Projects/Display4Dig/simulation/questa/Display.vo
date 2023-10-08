@@ -1,0 +1,304 @@
+// Copyright (C) 2023  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition"
+
+// DATE "09/25/2023 15:59:31"
+
+// 
+// Device: Altera EP4CE6E22C8 Package TQFP144
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Display (
+	segments,
+	anodes,
+	anodes1,
+	anodes2,
+	anodes3);
+output 	[7:0] segments;
+output 	anodes;
+output 	anodes1;
+output 	anodes2;
+output 	anodes3;
+
+// Design Ports Information
+// segments[0]	=>  Location: PIN_128,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[1]	=>  Location: PIN_121,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[2]	=>  Location: PIN_125,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[3]	=>  Location: PIN_129,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[4]	=>  Location: PIN_132,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[5]	=>  Location: PIN_126,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[6]	=>  Location: PIN_124,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// segments[7]	=>  Location: PIN_127,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// anodes	=>  Location: PIN_133,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// anodes1	=>  Location: PIN_135,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// anodes2	=>  Location: PIN_136,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// anodes3	=>  Location: PIN_137,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \segments[0]~output_o ;
+wire \segments[1]~output_o ;
+wire \segments[2]~output_o ;
+wire \segments[3]~output_o ;
+wire \segments[4]~output_o ;
+wire \segments[5]~output_o ;
+wire \segments[6]~output_o ;
+wire \segments[7]~output_o ;
+wire \anodes~output_o ;
+wire \anodes1~output_o ;
+wire \anodes2~output_o ;
+wire \anodes3~output_o ;
+
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOOBUF_X16_Y24_N16
+cycloneive_io_obuf \segments[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[0]~output .bus_hold = "false";
+defparam \segments[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y24_N16
+cycloneive_io_obuf \segments[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[1]~output .bus_hold = "false";
+defparam \segments[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X18_Y24_N23
+cycloneive_io_obuf \segments[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[2]~output .bus_hold = "false";
+defparam \segments[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X16_Y24_N23
+cycloneive_io_obuf \segments[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[3]~output .bus_hold = "false";
+defparam \segments[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X13_Y24_N16
+cycloneive_io_obuf \segments[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[4]~output .bus_hold = "false";
+defparam \segments[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X16_Y24_N2
+cycloneive_io_obuf \segments[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[5]~output .bus_hold = "false";
+defparam \segments[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X18_Y24_N16
+cycloneive_io_obuf \segments[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[6]~output .bus_hold = "false";
+defparam \segments[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X16_Y24_N9
+cycloneive_io_obuf \segments[7]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\segments[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \segments[7]~output .bus_hold = "false";
+defparam \segments[7]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X13_Y24_N23
+cycloneive_io_obuf \anodes~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\anodes~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \anodes~output .bus_hold = "false";
+defparam \anodes~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X11_Y24_N16
+cycloneive_io_obuf \anodes1~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\anodes1~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \anodes1~output .bus_hold = "false";
+defparam \anodes1~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y24_N9
+cycloneive_io_obuf \anodes2~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\anodes2~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \anodes2~output .bus_hold = "false";
+defparam \anodes2~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y24_N2
+cycloneive_io_obuf \anodes3~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\anodes3~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \anodes3~output .bus_hold = "false";
+defparam \anodes3~output .open_drain_output = "false";
+// synopsys translate_on
+
+assign segments[0] = \segments[0]~output_o ;
+
+assign segments[1] = \segments[1]~output_o ;
+
+assign segments[2] = \segments[2]~output_o ;
+
+assign segments[3] = \segments[3]~output_o ;
+
+assign segments[4] = \segments[4]~output_o ;
+
+assign segments[5] = \segments[5]~output_o ;
+
+assign segments[6] = \segments[6]~output_o ;
+
+assign segments[7] = \segments[7]~output_o ;
+
+assign anodes = \anodes~output_o ;
+
+assign anodes1 = \anodes1~output_o ;
+
+assign anodes2 = \anodes2~output_o ;
+
+assign anodes3 = \anodes3~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DCLK~	=>  Location: PIN_12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DATA0~	=>  Location: PIN_13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCEO~	=>  Location: PIN_101,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+
+
+endmodule

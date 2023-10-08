@@ -1,0 +1,6 @@
+|RicePackage
+capacity[0] => Equal0.IN3
+capacity[1] => Equal0.IN2
+speaker <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

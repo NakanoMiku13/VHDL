@@ -1,0 +1,5 @@
+|MorseCode
+button => lamp.DATAIN
+lamp << button.DB_MAX_OUTPUT_PORT_TYPE
+
+

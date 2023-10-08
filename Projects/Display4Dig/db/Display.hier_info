@@ -1,0 +1,15 @@
+|Display
+segments[0] << <GND>
+segments[1] << <GND>
+segments[2] << <GND>
+segments[3] << <GND>
+segments[4] << <GND>
+segments[5] << <GND>
+segments[6] << <GND>
+segments[7] << <GND>
+anodes << <GND>
+anodes1 << <GND>
+anodes2 << <GND>
+anodes3 << <GND>
+
+

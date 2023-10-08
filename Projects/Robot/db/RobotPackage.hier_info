@@ -1,0 +1,13 @@
+|RobotPackage
+boxes[0] => Mux0.IN19
+boxes[0] => Mux1.IN19
+boxes[1] => Mux0.IN18
+boxes[1] => Mux1.IN18
+boxes[2] => Mux0.IN17
+boxes[2] => Mux1.IN17
+boxes[3] => Mux0.IN16
+boxes[3] => Mux1.IN16
+robotGo <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+robotStand <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,9 @@
+|StairButton
+a => x3.IN0
+b => x3.IN1
+x1 <= <VCC>
+x2 <= <VCC>
+x3 <= x3.DB_MAX_OUTPUT_PORT_TYPE
+x4 <= <VCC>
+
+

@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "robotGo",
+					"strict" : false
+				},
+				{
+					"name" : "robotStand",
+					"strict" : false
+				},
+				{
+					"name" : "boxes[0]",
+					"strict" : false
+				},
+				{
+					"name" : "boxes[1]",
+					"strict" : false
+				},
+				{
+					"name" : "boxes[2]",
+					"strict" : false
+				},
+				{
+					"name" : "boxes[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

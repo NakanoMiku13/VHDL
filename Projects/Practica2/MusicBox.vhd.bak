@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity AudioToneGenerator is
+  Port (
+    clk : in STD_LOGIC;            -- Reloj de la FPGA
+    audio_out : out STD_LOGIC      -- Salida de audio hacia la bocina
+  );
+end AudioToneGenerator;
+
+architecture Behavioral of AudioToneGenerator is
+  signal counter : STD_LOGIC_VECTOR(23 DOWNTO 0) := "000000000000000000000000";  -- Contador para generar el tono
+  signal tone : STD_LOGIC;         -- Señal de tono de audio
+
+  constant COUNTER_MAX : STD_LOGIC_VECTOR(23 DOWNTO 0) := "100100100100100100100100";  -- Valor máximo para el contador (ajusta la frecuencia del tono)
+
+begin
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      -- Incrementar el contador en cada flanco de subida del reloj
+      counter <= counter + 1;
+      
+      -- Generar un tono de audio al invertir el bit más significativo del contador
+      tone <= not counter(23);
+
+      -- Salida de audio hacia la bocina
+      audio_out <= tone;
+    end if;
+  end process;
+end Behavioral;

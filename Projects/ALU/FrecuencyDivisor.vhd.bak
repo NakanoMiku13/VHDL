@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity FrecuencyDivisor is
+	Port(
+		clock, reset : in std_logic;
+		maxFrecuency : in integer;
+		newClock : out std_logic);
+end FrecuencyDivisor;
+architecture ArchFrecuency of FrecuencyDivisor is
+	--Max 500000
+	signal newClockCounter : integer := maxFrecuency;
+begin

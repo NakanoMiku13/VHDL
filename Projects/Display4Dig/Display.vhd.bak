@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Display is
+    Port (
+        segments : out STD_LOGIC_VECTOR(7 downto 0);
+        anodes : out STD_LOGIC_VECTOR(3 downto 0)
+    );
+end Display;
+
+architecture Behavioral of Display is
+    signal display_data : STD_LOGIC_VECTOR(7 downto 0) := "00000000"; -- Representa el número 9 en 7 segmentos
+
+begin
+    segments <= "11111111";
+    anodes <= "1111"; -- Ánodo común activo para el dígito único
+              
+end Behavioral;
