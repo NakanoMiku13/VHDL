@@ -1,0 +1,1264 @@
+Analysis & Synthesis report for ALU
+Mon Oct 23 14:57:26 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Div1
+ 15. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Mod2
+ 17. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Div2
+ 19. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Mod1
+ 20. Port Connectivity Checks: "FullAdder3:\substract:7:Substraction"
+ 21. Port Connectivity Checks: "FullAdder3:\substract:6:Substraction"
+ 22. Port Connectivity Checks: "FullAdder3:\substract:5:Substraction"
+ 23. Port Connectivity Checks: "FullAdder3:\substract:4:Substraction"
+ 24. Port Connectivity Checks: "FullAdder3:\substract:3:Substraction"
+ 25. Port Connectivity Checks: "FullAdder3:\substract:2:Substraction"
+ 26. Port Connectivity Checks: "FullAdder3:\substract:1:Substraction"
+ 27. Port Connectivity Checks: "FullAdder3:\substract:0:Substraction"
+ 28. Port Connectivity Checks: "FullAdder3:\adder:7:FullAdder"
+ 29. Port Connectivity Checks: "FullAdder3:\adder:6:FullAdder"
+ 30. Port Connectivity Checks: "FullAdder3:\adder:5:FullAdder"
+ 31. Port Connectivity Checks: "FullAdder3:\adder:4:FullAdder"
+ 32. Port Connectivity Checks: "FullAdder3:\adder:3:FullAdder"
+ 33. Port Connectivity Checks: "FullAdder3:\adder:2:FullAdder"
+ 34. Port Connectivity Checks: "FullAdder3:\adder:1:FullAdder"
+ 35. Port Connectivity Checks: "FullAdder3:\adder:0:FullAdder"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Oct 23 14:57:26 2023          ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; ALU                                            ;
+; Top-level Entity Name              ; ALU                                            ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 1,101                                          ;
+;     Total combinational functions  ; 1,099                                          ;
+;     Dedicated logic registers      ; 299                                            ;
+; Total registers                    ; 299                                            ;
+; Total pins                         ; 38                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; ALU                ; ALU                ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; ALU.vhd                          ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd                    ;         ;
+; LeftShifter.vhd                  ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd            ;         ;
+; ArithmeticShiftRight.vhd         ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd   ;         ;
+; Complement2.vhd                  ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd            ;         ;
+; BinaryToBCD.vhd                  ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd            ;         ;
+; Display.vhd                      ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd                ;         ;
+; DecoderBCD.vhd                   ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd             ;         ;
+; FullAdder3.vhd                   ; yes             ; User VHDL File               ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/FullAdder3.vhd             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc          ;         ;
+; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_vim.tdf      ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/sign_div_unsign_nlh.tdf ;         ;
+; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_27f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_ccm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_ccm.tdf      ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/sign_div_unsign_1nh.tdf ;         ;
+; db/alt_u_div_m9f.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_m9f.tdf       ;         ;
+; db/lpm_divide_9km.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_9km.tdf      ;         ;
+; db/lpm_divide_sim.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_sim.tdf      ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/sign_div_unsign_klh.tdf ;         ;
+; db/alt_u_div_s6f.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_s6f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 1,101       ;
+;                                             ;             ;
+; Total combinational functions               ; 1099        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 406         ;
+;     -- 3 input functions                    ; 254         ;
+;     -- <=2 input functions                  ; 439         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 809         ;
+;     -- arithmetic mode                      ; 290         ;
+;                                             ;             ;
+; Total registers                             ; 299         ;
+;     -- Dedicated logic registers            ; 299         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 38          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 358         ;
+; Total fan-out                               ; 4260        ;
+; Average fan-out                             ; 2.89        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                               ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Entity Name          ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |ALU                                      ; 1099 (108)          ; 299 (0)                   ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |ALU                                                                                                                 ; ALU                  ; work         ;
+;    |ArithmeticShiftRight:ASRShift|        ; 92 (92)             ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|ArithmeticShiftRight:ASRShift                                                                                   ; ArithmeticShiftRight ; work         ;
+;    |BinaryToBCD:BCD|                      ; 389 (8)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD                                                                                                 ; BinaryToBCD          ; work         ;
+;       |lpm_divide:Div1|                   ; 69 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div1                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_vim:auto_generated|  ; 69 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div1|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim       ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 69 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div1|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh  ; work         ;
+;                |alt_u_div_27f:divider|    ; 69 (69)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div1|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ; alt_u_div_27f        ; work         ;
+;       |lpm_divide:Div2|                   ; 82 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div2                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_sim:auto_generated|  ; 82 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div2|lpm_divide_sim:auto_generated                                                   ; lpm_divide_sim       ; work         ;
+;             |sign_div_unsign_klh:divider| ; 82 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div2|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider                       ; sign_div_unsign_klh  ; work         ;
+;                |alt_u_div_s6f:divider|    ; 82 (82)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div2|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider ; alt_u_div_s6f        ; work         ;
+;       |lpm_divide:Mod0|                   ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_ccm:auto_generated|  ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ccm:auto_generated                                                   ; lpm_divide_ccm       ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                       ; sign_div_unsign_1nh  ; work         ;
+;                |alt_u_div_m9f:divider|    ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider ; alt_u_div_m9f        ; work         ;
+;       |lpm_divide:Mod1|                   ; 87 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_ccm:auto_generated|  ; 87 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated                                                   ; lpm_divide_ccm       ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 87 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                       ; sign_div_unsign_1nh  ; work         ;
+;                |alt_u_div_m9f:divider|    ; 87 (87)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider ; alt_u_div_m9f        ; work         ;
+;       |lpm_divide:Mod2|                   ; 130 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_ccm:auto_generated|  ; 130 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2|lpm_divide_ccm:auto_generated                                                   ; lpm_divide_ccm       ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 130 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                       ; sign_div_unsign_1nh  ; work         ;
+;                |alt_u_div_m9f:divider|    ; 130 (130)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider ; alt_u_div_m9f        ; work         ;
+;    |Complement2:Comp2|                    ; 102 (102)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|Complement2:Comp2                                                                                               ; Complement2          ; work         ;
+;    |DecoderBCD:Decoder|                   ; 22 (22)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|DecoderBCD:Decoder                                                                                              ; DecoderBCD           ; work         ;
+;    |Display:PrintArithResult|             ; 204 (204)           ; 85 (85)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|Display:PrintArithResult                                                                                        ; Display              ; work         ;
+;    |Display:PrintMessage|                 ; 151 (151)           ; 53 (53)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|Display:PrintMessage                                                                                            ; Display              ; work         ;
+;    |FullAdder3:\adder:5:FullAdder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FullAdder3:\adder:5:FullAdder                                                                                   ; FullAdder3           ; work         ;
+;    |LeftShifter:LfShift|                  ; 29 (29)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|LeftShifter:LfShift                                                                                             ; LeftShifter          ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; Display:PrintArithResult|message[14]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[0]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[21]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[7]                 ; reset               ; yes                    ;
+; Display:PrintMessage|message[14]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[0]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[21]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[7]                     ; reset               ; yes                    ;
+; Display:PrintArithResult|message[1]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[15]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[22]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[8]                 ; reset               ; yes                    ;
+; Display:PrintMessage|message[1]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[15]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[22]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[8]                     ; reset               ; yes                    ;
+; Display:PrintArithResult|message[16]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[2]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[23]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[9]                 ; reset               ; yes                    ;
+; Display:PrintMessage|message[16]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[2]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[23]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[9]                     ; reset               ; yes                    ;
+; Display:PrintArithResult|message[3]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[17]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[24]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[10]                ; reset               ; yes                    ;
+; Display:PrintMessage|message[3]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[17]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[24]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[10]                    ; reset               ; yes                    ;
+; Display:PrintArithResult|message[18]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[4]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[25]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[11]                ; reset               ; yes                    ;
+; Display:PrintMessage|message[18]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[4]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[25]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[11]                    ; reset               ; yes                    ;
+; Display:PrintArithResult|message[5]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[19]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[26]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[12]                ; reset               ; yes                    ;
+; Display:PrintMessage|message[5]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[19]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[26]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[12]                    ; reset               ; yes                    ;
+; Display:PrintArithResult|message[20]                ; reset               ; yes                    ;
+; Display:PrintArithResult|message[6]                 ; reset               ; yes                    ;
+; Display:PrintArithResult|message[13]                ; reset               ; yes                    ;
+; Display:PrintMessage|message[20]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[6]                     ; reset               ; yes                    ;
+; Display:PrintMessage|message[27]                    ; reset               ; yes                    ;
+; Display:PrintMessage|message[13]                    ; reset               ; yes                    ;
+; displayMessage2[14]                                 ; Mux35               ; yes                    ;
+; displayMessage2[0]                                  ; Mux35               ; yes                    ;
+; displayMessage2[21]                                 ; Mux35               ; yes                    ;
+; displayMessage2[7]                                  ; Mux35               ; yes                    ;
+; displayMessage2[1]                                  ; Mux35               ; yes                    ;
+; displayMessage2[15]                                 ; Mux35               ; yes                    ;
+; displayMessage2[22]                                 ; Mux35               ; yes                    ;
+; displayMessage2[8]                                  ; Mux35               ; yes                    ;
+; displayMessage2[16]                                 ; Mux35               ; yes                    ;
+; displayMessage2[2]                                  ; Mux35               ; yes                    ;
+; displayMessage2[23]                                 ; Mux35               ; yes                    ;
+; displayMessage2[9]                                  ; Mux35               ; yes                    ;
+; displayMessage2[3]                                  ; Mux35               ; yes                    ;
+; displayMessage2[17]                                 ; Mux35               ; yes                    ;
+; displayMessage2[24]                                 ; Mux35               ; yes                    ;
+; displayMessage2[10]                                 ; Mux35               ; yes                    ;
+; displayMessage2[18]                                 ; Mux35               ; yes                    ;
+; displayMessage2[4]                                  ; Mux35               ; yes                    ;
+; displayMessage2[25]                                 ; Mux35               ; yes                    ;
+; displayMessage2[11]                                 ; Mux35               ; yes                    ;
+; displayMessage2[5]                                  ; Mux35               ; yes                    ;
+; displayMessage2[19]                                 ; Mux35               ; yes                    ;
+; displayMessage2[26]                                 ; Mux35               ; yes                    ;
+; displayMessage2[12]                                 ; Mux35               ; yes                    ;
+; displayMessage2[20]                                 ; Mux35               ; yes                    ;
+; displayMessage2[6]                                  ; Mux35               ; yes                    ;
+; displayMessage2[27]                                 ; Mux35               ; yes                    ;
+; displayMessage2[13]                                 ; Mux35               ; yes                    ;
+; arithResult[0]                                      ; Mux23               ; yes                    ;
+; arithResult[1]                                      ; Mux23               ; yes                    ;
+; arithResult[2]                                      ; Mux23               ; yes                    ;
+; arithResult[3]                                      ; Mux23               ; yes                    ;
+; arithResult[9]                                      ; Mux23               ; yes                    ;
+; arithResult[7]                                      ; Mux23               ; yes                    ;
+; arithResult[8]                                      ; Mux23               ; yes                    ;
+; arithResult[4]                                      ; Mux23               ; yes                    ;
+; arithResult[5]                                      ; Mux23               ; yes                    ;
+; arithResult[6]                                      ; Mux23               ; yes                    ;
+; Number of user-specified and inferred latches = 93  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                    ;
++-----------------------------------------------+-------------------------------------------------------+
+; Register name                                 ; Reason for Removal                                    ;
++-----------------------------------------------+-------------------------------------------------------+
+; ArithmeticShiftRight:ASRShift|counter2[4..31] ; Stuck at GND due to stuck port data_in                ;
+; LeftShifter:LfShift|counter2[4..31]           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[0]            ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter[0..31]         ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter2[3..31]        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter2[0..2]         ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter3[4..31]        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter3[1..3]         ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter3[0]            ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[5..31]        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[4]            ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[3]            ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[2]            ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[1]            ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[0]        ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter[0..31]     ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter2[3..31]    ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter2[0..2]     ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter3[4..31]    ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter3[1..3]     ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter3[0]        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[5..31]    ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[4]        ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[3]        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[2]        ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[1]        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|counter4[2..30]          ; Merged with Display:PrintMessage|counter4[31]         ;
+; Display:PrintArithResult|counter4[2..30]      ; Merged with Display:PrintArithResult|counter4[31]     ;
+; LeftShifter:LfShift|counter[31]               ; Merged with ArithmeticShiftRight:ASRShift|counter[31] ;
+; LeftShifter:LfShift|counter[30]               ; Merged with ArithmeticShiftRight:ASRShift|counter[30] ;
+; LeftShifter:LfShift|counter[29]               ; Merged with ArithmeticShiftRight:ASRShift|counter[29] ;
+; LeftShifter:LfShift|counter[28]               ; Merged with ArithmeticShiftRight:ASRShift|counter[28] ;
+; LeftShifter:LfShift|counter[27]               ; Merged with ArithmeticShiftRight:ASRShift|counter[27] ;
+; LeftShifter:LfShift|counter[26]               ; Merged with ArithmeticShiftRight:ASRShift|counter[26] ;
+; LeftShifter:LfShift|counter[25]               ; Merged with ArithmeticShiftRight:ASRShift|counter[25] ;
+; LeftShifter:LfShift|counter[24]               ; Merged with ArithmeticShiftRight:ASRShift|counter[24] ;
+; LeftShifter:LfShift|counter[23]               ; Merged with ArithmeticShiftRight:ASRShift|counter[23] ;
+; LeftShifter:LfShift|counter[21]               ; Merged with ArithmeticShiftRight:ASRShift|counter[21] ;
+; LeftShifter:LfShift|counter[20]               ; Merged with ArithmeticShiftRight:ASRShift|counter[20] ;
+; LeftShifter:LfShift|counter[17]               ; Merged with ArithmeticShiftRight:ASRShift|counter[17] ;
+; LeftShifter:LfShift|counter[16]               ; Merged with ArithmeticShiftRight:ASRShift|counter[16] ;
+; LeftShifter:LfShift|counter[15]               ; Merged with ArithmeticShiftRight:ASRShift|counter[15] ;
+; LeftShifter:LfShift|counter[13]               ; Merged with ArithmeticShiftRight:ASRShift|counter[13] ;
+; LeftShifter:LfShift|counter[12]               ; Merged with ArithmeticShiftRight:ASRShift|counter[12] ;
+; LeftShifter:LfShift|counter[10]               ; Merged with ArithmeticShiftRight:ASRShift|counter[10] ;
+; LeftShifter:LfShift|counter[7]                ; Merged with ArithmeticShiftRight:ASRShift|counter[7]  ;
+; LeftShifter:LfShift|counter[5]                ; Merged with ArithmeticShiftRight:ASRShift|counter[5]  ;
+; LeftShifter:LfShift|counter[4]                ; Merged with ArithmeticShiftRight:ASRShift|counter[4]  ;
+; LeftShifter:LfShift|counter[3]                ; Merged with ArithmeticShiftRight:ASRShift|counter[3]  ;
+; LeftShifter:LfShift|counter[2]                ; Merged with ArithmeticShiftRight:ASRShift|counter[2]  ;
+; LeftShifter:LfShift|counter[1]                ; Merged with ArithmeticShiftRight:ASRShift|counter[1]  ;
+; LeftShifter:LfShift|counter[0]                ; Merged with ArithmeticShiftRight:ASRShift|counter[0]  ;
+; LeftShifter:LfShift|counter[22]               ; Merged with ArithmeticShiftRight:ASRShift|counter[22] ;
+; LeftShifter:LfShift|counter[19]               ; Merged with ArithmeticShiftRight:ASRShift|counter[19] ;
+; LeftShifter:LfShift|counter[18]               ; Merged with ArithmeticShiftRight:ASRShift|counter[18] ;
+; LeftShifter:LfShift|counter[14]               ; Merged with ArithmeticShiftRight:ASRShift|counter[14] ;
+; LeftShifter:LfShift|counter[11]               ; Merged with ArithmeticShiftRight:ASRShift|counter[11] ;
+; LeftShifter:LfShift|counter[9]                ; Merged with ArithmeticShiftRight:ASRShift|counter[9]  ;
+; LeftShifter:LfShift|counter[8]                ; Merged with ArithmeticShiftRight:ASRShift|counter[8]  ;
+; LeftShifter:LfShift|counter[6]                ; Merged with ArithmeticShiftRight:ASRShift|counter[6]  ;
+; Display:PrintMessage|counter3[31]             ; Merged with Display:PrintArithResult|counter3[31]     ;
+; Display:PrintMessage|counter3[30]             ; Merged with Display:PrintArithResult|counter3[30]     ;
+; Display:PrintMessage|counter3[29]             ; Merged with Display:PrintArithResult|counter3[29]     ;
+; Display:PrintMessage|counter3[28]             ; Merged with Display:PrintArithResult|counter3[28]     ;
+; Display:PrintMessage|counter3[27]             ; Merged with Display:PrintArithResult|counter3[27]     ;
+; Display:PrintMessage|counter3[26]             ; Merged with Display:PrintArithResult|counter3[26]     ;
+; Display:PrintMessage|counter3[25]             ; Merged with Display:PrintArithResult|counter3[25]     ;
+; Display:PrintMessage|counter3[24]             ; Merged with Display:PrintArithResult|counter3[24]     ;
+; Display:PrintMessage|counter3[23]             ; Merged with Display:PrintArithResult|counter3[23]     ;
+; Display:PrintMessage|counter3[22]             ; Merged with Display:PrintArithResult|counter3[22]     ;
+; Display:PrintMessage|counter3[21]             ; Merged with Display:PrintArithResult|counter3[21]     ;
+; Display:PrintMessage|counter3[20]             ; Merged with Display:PrintArithResult|counter3[20]     ;
+; Display:PrintMessage|counter3[19]             ; Merged with Display:PrintArithResult|counter3[19]     ;
+; Display:PrintMessage|counter3[18]             ; Merged with Display:PrintArithResult|counter3[18]     ;
+; Display:PrintMessage|counter3[17]             ; Merged with Display:PrintArithResult|counter3[17]     ;
+; Display:PrintMessage|counter3[16]             ; Merged with Display:PrintArithResult|counter3[16]     ;
+; Display:PrintMessage|counter3[15]             ; Merged with Display:PrintArithResult|counter3[15]     ;
+; Display:PrintMessage|counter3[14]             ; Merged with Display:PrintArithResult|counter3[14]     ;
+; Display:PrintMessage|counter3[13]             ; Merged with Display:PrintArithResult|counter3[13]     ;
+; Display:PrintMessage|counter3[12]             ; Merged with Display:PrintArithResult|counter3[12]     ;
+; Display:PrintMessage|counter3[11]             ; Merged with Display:PrintArithResult|counter3[11]     ;
+; Display:PrintMessage|counter3[10]             ; Merged with Display:PrintArithResult|counter3[10]     ;
+; Display:PrintMessage|counter3[9]              ; Merged with Display:PrintArithResult|counter3[9]      ;
+; Display:PrintMessage|counter3[3]              ; Merged with Display:PrintArithResult|counter3[3]      ;
+; Display:PrintMessage|counter3[1]              ; Merged with Display:PrintArithResult|counter3[1]      ;
+; Display:PrintMessage|counter3[0]              ; Merged with Display:PrintArithResult|counter3[0]      ;
+; Display:PrintMessage|counter3[8]              ; Merged with Display:PrintArithResult|counter3[8]      ;
+; Display:PrintMessage|counter3[7]              ; Merged with Display:PrintArithResult|counter3[7]      ;
+; Display:PrintMessage|counter3[6]              ; Merged with Display:PrintArithResult|counter3[6]      ;
+; Display:PrintMessage|counter3[5]              ; Merged with Display:PrintArithResult|counter3[5]      ;
+; Display:PrintMessage|counter3[4]              ; Merged with Display:PrintArithResult|counter3[4]      ;
+; Display:PrintMessage|counter3[2]              ; Merged with Display:PrintArithResult|counter3[2]      ;
+; Display:PrintMessage|counter4[31]             ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|counter4[31]         ; Stuck at GND due to stuck port data_in                ;
+; BinaryToBCD:BCD|output[13..15]                ; Stuck at GND due to stuck port data_in                ;
+; DecoderBCD:Decoder|decodedMessage[27]         ; Stuck at GND due to stuck port data_in                ;
+; DecoderBCD:Decoder|decodedMessage[23]         ; Merged with DecoderBCD:Decoder|decodedMessage[22]     ;
+; DecoderBCD:Decoder|decodedMessage[24..26]     ; Merged with DecoderBCD:Decoder|decodedMessage[21]     ;
+; Total Number of Removed Registers = 444       ;                                                       ;
++-----------------------------------------------+-------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                     ;
++----------------------------+---------------------------+----------------------------------------+
+; Register name              ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------+---------------------------+----------------------------------------+
+; BinaryToBCD:BCD|output[13] ; Stuck at GND              ; DecoderBCD:Decoder|decodedMessage[27]  ;
+;                            ; due to stuck port data_in ;                                        ;
++----------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 299   ;
+; Number of registers using Synchronous Clear  ; 64    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 255   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 104   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; Display:PrintMessage|segments[0]        ; 1       ;
+; Display:PrintArithResult|segments[0]    ; 1       ;
+; Display:PrintMessage|segments[1]        ; 1       ;
+; Display:PrintArithResult|segments[1]    ; 1       ;
+; Display:PrintMessage|segments[2]        ; 1       ;
+; Display:PrintArithResult|segments[2]    ; 1       ;
+; Display:PrintMessage|segments[3]        ; 1       ;
+; Display:PrintArithResult|segments[3]    ; 1       ;
+; Display:PrintMessage|segments[4]        ; 1       ;
+; Display:PrintArithResult|segments[4]    ; 1       ;
+; Display:PrintMessage|segments[5]        ; 1       ;
+; Display:PrintArithResult|segments[5]    ; 1       ;
+; Display:PrintMessage|segments[6]        ; 1       ;
+; Display:PrintArithResult|segments[6]    ; 1       ;
+; Display:PrintMessage|digits[0]          ; 1       ;
+; Display:PrintArithResult|digits[0]      ; 1       ;
+; Display:PrintMessage|digits[1]          ; 1       ;
+; Display:PrintArithResult|digits[1]      ; 1       ;
+; Display:PrintMessage|digits[2]          ; 1       ;
+; Display:PrintArithResult|digits[2]      ; 1       ;
+; Display:PrintMessage|digits[3]          ; 1       ;
+; Display:PrintArithResult|digits[3]      ; 1       ;
+; Display:PrintMessage|tempLetter[0]      ; 1       ;
+; Display:PrintArithResult|tempLetter[0]  ; 1       ;
+; Display:PrintMessage|tempLetter[1]      ; 1       ;
+; Display:PrintArithResult|tempLetter[1]  ; 1       ;
+; Display:PrintMessage|tempLetter[2]      ; 1       ;
+; Display:PrintArithResult|tempLetter[2]  ; 1       ;
+; Display:PrintMessage|tempLetter[3]      ; 1       ;
+; Display:PrintArithResult|tempLetter[3]  ; 1       ;
+; Display:PrintMessage|tempLetter[4]      ; 1       ;
+; Display:PrintArithResult|tempLetter[4]  ; 1       ;
+; Display:PrintMessage|tempLetter[5]      ; 1       ;
+; Display:PrintArithResult|tempLetter[5]  ; 1       ;
+; Display:PrintMessage|tempLetter[6]      ; 1       ;
+; Display:PrintArithResult|tempLetter[6]  ; 1       ;
+; Total number of inverted registers = 36 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 16:1               ; 7 bits    ; 70 LEs        ; 21 LEs               ; 49 LEs                 ; Yes        ; |ALU|Display:PrintArithResult|segments[0] ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 21 LEs               ; 49 LEs                 ; Yes        ; |ALU|Display:PrintMessage|segments[4]     ;
+; 8:1                ; 11 bits   ; 55 LEs        ; 22 LEs               ; 33 LEs                 ; No         ; |ALU|Mux16                                ;
+; 16:1               ; 5 bits    ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; No         ; |ALU|Mux7                                 ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 12 LEs               ; 9 LEs                  ; No         ; |ALU|Mux8                                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |ALU|Mux10                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                ;
+; LPM_WIDTHD             ; 7              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_vim ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                ;
+; LPM_WIDTHD             ; 10             ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Mod2 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                ;
+; LPM_WIDTHD             ; 10             ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                ;
+; LPM_WIDTHD             ; 10             ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_9km ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Div2 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_sim ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BCD|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                ;
+; LPM_WIDTHD             ; 10             ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:7:Substraction"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; x    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:6:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:5:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:4:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:3:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:2:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:1:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at VCC                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\substract:0:Substraction" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; b    ; Input ; Info     ; Stuck at VCC                           ;
+; cin  ; Input ; Info     ; Stuck at GND                           ;
+; x    ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:7:FullAdder"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; x    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:6:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:5:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:4:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:3:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:2:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:1:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at VCC                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "FullAdder3:\adder:0:FullAdder" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at VCC                    ;
+; cin  ; Input ; Info     ; Stuck at GND                    ;
+; x    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 38                          ;
+; cycloneiii_ff         ; 299                         ;
+;     CLR               ; 115                         ;
+;     CLR SCLR          ; 64                          ;
+;     ENA               ; 28                          ;
+;     ENA CLR           ; 76                          ;
+;     plain             ; 16                          ;
+; cycloneiii_lcell_comb ; 1099                        ;
+;     arith             ; 290                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 180                         ;
+;         3 data inputs ; 103                         ;
+;     normal            ; 809                         ;
+;         0 data inputs ; 24                          ;
+;         1 data inputs ; 27                          ;
+;         2 data inputs ; 201                         ;
+;         3 data inputs ; 151                         ;
+;         4 data inputs ; 406                         ;
+;                       ;                             ;
+; Max LUT depth         ; 18.90                       ;
+; Average LUT depth     ; 7.77                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Mon Oct 23 14:57:18 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
+    Info (12022): Found design unit 1: ALU-ArchALU File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 13
+    Info (12023): Found entity 1: ALU File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file LeftShifter.vhd
+    Info (12022): Found design unit 1: LeftShifter-ArchLeftShifter File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 10
+    Info (12023): Found entity 1: LeftShifter File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file ArithmeticShiftRight.vhd
+    Info (12022): Found design unit 1: ArithmeticShiftRight-ArchArithmeticShiftRight File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 10
+    Info (12023): Found entity 1: ArithmeticShiftRight File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file Complement2.vhd
+    Info (12022): Found design unit 1: Complement2-ArchComplement2 File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 10
+    Info (12023): Found entity 1: Complement2 File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file BinaryToBCD.vhd
+    Info (12022): Found design unit 1: BinaryToBCD-Behavioral File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 16
+    Info (12023): Found entity 1: BinaryToBCD File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file Display.vhd
+    Info (12022): Found design unit 1: Display-ArchShifterDisplay File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 11
+    Info (12023): Found entity 1: Display File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file DecoderBCD.vhd
+    Info (12022): Found design unit 1: DecoderBCD-ArchDecoder File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd Line: 10
+    Info (12023): Found entity 1: DecoderBCD File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file FullAdder3.vhd
+    Info (12022): Found design unit 1: FullAdder3-ArchFullAdder File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/FullAdder3.vhd Line: 13
+    Info (12023): Found entity 1: FullAdder3 File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/FullAdder3.vhd Line: 7
+Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at ALU.vhd(15): used explicit default value for signal "B" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 15
+Warning (10540): VHDL Signal Declaration warning at ALU.vhd(22): used explicit default value for signal "cons" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at ALU.vhd(95): signal "leftShifterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at ALU.vhd(95): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at ALU.vhd(95): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at ALU.vhd(96): signal "asrShifterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at ALU.vhd(96): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at ALU.vhd(96): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at ALU.vhd(98): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at ALU.vhd(98): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at ALU.vhd(98): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at ALU.vhd(99): signal "complementOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at ALU.vhd(99): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at ALU.vhd(99): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at ALU.vhd(100): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at ALU.vhd(100): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at ALU.vhd(100): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at ALU.vhd(100): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at ALU.vhd(101): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ALU.vhd(101): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ALU.vhd(101): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ALU.vhd(101): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ALU.vhd(104): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at ALU.vhd(104): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at ALU.vhd(104): signal "cons" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at ALU.vhd(105): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at ALU.vhd(105): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at ALU.vhd(105): signal "cons" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at ALU.vhd(106): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at ALU.vhd(106): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at ALU.vhd(106): signal "cons" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at ALU.vhd(107): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at ALU.vhd(107): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at ALU.vhd(107): signal "cons" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at ALU.vhd(114): signal "partialSumABLSB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at ALU.vhd(115): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at ALU.vhd(116): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at ALU.vhd(120): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at ALU.vhd(120): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at ALU.vhd(121): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at ALU.vhd(121): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at ALU.vhd(122): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at ALU.vhd(122): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at ALU.vhd(123): signal "partialSubABLSB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at ALU.vhd(124): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at ALU.vhd(125): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 125
+Warning (10631): VHDL Process Statement warning at ALU.vhd(89): inferring latch(es) for signal or variable "displayMessage2", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Warning (10631): VHDL Process Statement warning at ALU.vhd(89): inferring latch(es) for signal or variable "auxAdderCarryOut", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Warning (10631): VHDL Process Statement warning at ALU.vhd(89): inferring latch(es) for signal or variable "arithResult", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[0]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[1]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[2]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[3]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[4]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[5]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[6]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[7]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[8]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "arithResult[9]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[0]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[1]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[2]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[3]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[4]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[5]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[6]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[7]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[8]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[9]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[10]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[11]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[12]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[13]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[14]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[15]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[16]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[17]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[18]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[19]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[20]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[21]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[22]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[23]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[24]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[25]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[26]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (10041): Inferred latch for "displayMessage2[27]" at ALU.vhd(89) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+Info (12128): Elaborating entity "LeftShifter" for hierarchy "LeftShifter:LfShift" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at LeftShifter.vhd(19): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 19
+Info (12128): Elaborating entity "ArithmeticShiftRight" for hierarchy "ArithmeticShiftRight:ASRShift" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at ArithmeticShiftRight.vhd(20): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 20
+Info (12128): Elaborating entity "Complement2" for hierarchy "Complement2:Comp2" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at Complement2.vhd(17): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at Complement2.vhd(30): signal "output" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 30
+Info (12128): Elaborating entity "FullAdder3" for hierarchy "FullAdder3:\adder:0:FullAdder" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 78
+Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:BCD" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 85
+Info (12128): Elaborating entity "DecoderBCD" for hierarchy "DecoderBCD:Decoder" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 86
+Warning (10036): Verilog HDL or VHDL warning at DecoderBCD.vhd(11): object "counter" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd Line: 11
+Warning (10492): VHDL Process Statement warning at DecoderBCD.vhd(39): signal "decodedMessage" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd Line: 39
+Info (12128): Elaborating entity "Display" for hierarchy "Display:PrintArithResult" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 87
+Warning (10036): Verilog HDL or VHDL warning at Display.vhd(32): object "aux" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at Display.vhd(35): signal "inputMessage" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 35
+Warning (10631): VHDL Process Statement warning at Display.vhd(26): inferring latch(es) for signal or variable "message", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[0]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[1]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[2]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[3]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[4]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[5]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[6]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[7]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[8]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[9]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[10]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[11]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[12]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[13]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[14]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[15]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[16]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[17]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[18]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[19]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[20]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[21]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[22]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[23]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[24]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[25]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[26]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (10041): Inferred latch for "message[27]" at Display.vhd(26) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BCD|Div1" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BCD|Mod0" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BCD|Mod2" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BCD|Div0" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 22
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BCD|Div2" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BCD|Mod1" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 24
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BCD|lpm_divide:Div1" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 23
+Info (12133): Instantiated megafunction "BinaryToBCD:BCD|lpm_divide:Div1" with the following parameter: File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vim.tdf
+    Info (12023): Found entity 1: lpm_divide_vim File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_vim.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/sign_div_unsign_nlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
+    Info (12023): Found entity 1: alt_u_div_27f File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_27f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BCD|lpm_divide:Mod0" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 23
+Info (12133): Instantiated megafunction "BinaryToBCD:BCD|lpm_divide:Mod0" with the following parameter: File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ccm.tdf
+    Info (12023): Found entity 1: lpm_divide_ccm File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_ccm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/sign_div_unsign_1nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m9f.tdf
+    Info (12023): Found entity 1: alt_u_div_m9f File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_m9f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BCD|lpm_divide:Div0" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 22
+Info (12133): Instantiated megafunction "BinaryToBCD:BCD|lpm_divide:Div0" with the following parameter: File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 22
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9km.tdf
+    Info (12023): Found entity 1: lpm_divide_9km File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_9km.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BCD|lpm_divide:Div2" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 24
+Info (12133): Instantiated megafunction "BinaryToBCD:BCD|lpm_divide:Div2" with the following parameter: File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/BinaryToBCD.vhd Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_sim.tdf
+    Info (12023): Found entity 1: lpm_divide_sim File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/lpm_divide_sim.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_klh File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/sign_div_unsign_klh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s6f.tdf
+    Info (12023): Found entity 1: alt_u_div_s6f File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_s6f.tdf Line: 27
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "Display:PrintArithResult|message[24]" merged with LATCH primitive "Display:PrintArithResult|message[21]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintArithResult|message[25]" merged with LATCH primitive "Display:PrintArithResult|message[21]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintArithResult|message[26]" merged with LATCH primitive "Display:PrintArithResult|message[21]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintArithResult|message[23]" merged with LATCH primitive "Display:PrintArithResult|message[22]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "displayMessage2[19]" merged with LATCH primitive "displayMessage2[14]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[26]" merged with LATCH primitive "displayMessage2[14]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[1]" merged with LATCH primitive "displayMessage2[0]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[4]" merged with LATCH primitive "displayMessage2[0]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[6]" merged with LATCH primitive "displayMessage2[0]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[22]" merged with LATCH primitive "displayMessage2[21]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[3]" merged with LATCH primitive "displayMessage2[7]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[9]" merged with LATCH primitive "displayMessage2[8]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[5]" merged with LATCH primitive "displayMessage2[2]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[27]" merged with LATCH primitive "displayMessage2[23]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "displayMessage2[20]" merged with LATCH primitive "displayMessage2[17]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[19]" merged with LATCH primitive "Display:PrintMessage|message[14]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[26]" merged with LATCH primitive "Display:PrintMessage|message[14]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[1]" merged with LATCH primitive "Display:PrintMessage|message[0]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[4]" merged with LATCH primitive "Display:PrintMessage|message[0]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[6]" merged with LATCH primitive "Display:PrintMessage|message[0]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[22]" merged with LATCH primitive "Display:PrintMessage|message[21]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[3]" merged with LATCH primitive "Display:PrintMessage|message[7]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[9]" merged with LATCH primitive "Display:PrintMessage|message[8]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[5]" merged with LATCH primitive "Display:PrintMessage|message[2]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[27]" merged with LATCH primitive "Display:PrintMessage|message[23]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+    Info (13026): Duplicate LATCH primitive "Display:PrintMessage|message[20]" merged with LATCH primitive "Display:PrintMessage|message[17]" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 26
+Warning (13012): Latch displayMessage2[14] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[0] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[21] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[7] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[15] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[2] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[8] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[2] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[16] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[2] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[23] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[17] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[2] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[24] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[10] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[18] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[25] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[2] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[11] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[1] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[12] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[2] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Warning (13012): Latch displayMessage2[13] has unsafe behavior File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 89
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selector[2] File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 7
+Info (13000): Registers with preset signals will power-up high File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 34
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "Complement2:Comp2|output[0]" is converted into an equivalent circuit using register "Complement2:Comp2|output[0]~_emulated" and latch "Complement2:Comp2|output[0]~1" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[1]" is converted into an equivalent circuit using register "Complement2:Comp2|output[1]~_emulated" and latch "Complement2:Comp2|output[1]~5" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[2]" is converted into an equivalent circuit using register "Complement2:Comp2|output[2]~_emulated" and latch "Complement2:Comp2|output[2]~9" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[3]" is converted into an equivalent circuit using register "Complement2:Comp2|output[3]~_emulated" and latch "Complement2:Comp2|output[3]~13" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[4]" is converted into an equivalent circuit using register "Complement2:Comp2|output[4]~_emulated" and latch "Complement2:Comp2|output[4]~17" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[5]" is converted into an equivalent circuit using register "Complement2:Comp2|output[5]~_emulated" and latch "Complement2:Comp2|output[5]~21" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[6]" is converted into an equivalent circuit using register "Complement2:Comp2|output[6]~_emulated" and latch "Complement2:Comp2|output[6]~25" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[7]" is converted into an equivalent circuit using register "Complement2:Comp2|output[7]~_emulated" and latch "Complement2:Comp2|output[7]~29" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[8]" is converted into an equivalent circuit using register "Complement2:Comp2|output[8]~_emulated" and latch "Complement2:Comp2|output[8]~33" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "Complement2:Comp2|output[9]" is converted into an equivalent circuit using register "Complement2:Comp2|output[9]~_emulated" and latch "Complement2:Comp2|output[9]~37" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Complement2.vhd Line: 16
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[0]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[0]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[0]~1" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[0]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[0]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[0]~1" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[1]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[1]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[1]~5" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[1]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[1]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[1]~5" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[2]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[2]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[2]~9" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[2]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[2]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[2]~9" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[3]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[3]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[3]~13" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[3]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[3]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[3]~13" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[4]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[4]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[4]~17" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[4]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[4]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[4]~17" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[5]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[5]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[5]~21" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[5]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[5]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[5]~21" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[6]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[6]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[6]~25" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[6]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[6]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[6]~25" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[7]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[7]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[7]~29" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[7]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[7]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[7]~29" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[8]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[8]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[8]~33" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[8]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[8]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[8]~33" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+    Warning (13310): Register "ArithmeticShiftRight:ASRShift|shifterOutput[9]" is converted into an equivalent circuit using register "ArithmeticShiftRight:ASRShift|shifterOutput[9]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[9]~37" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ArithmeticShiftRight.vhd Line: 19
+    Warning (13310): Register "LeftShifter:LfShift|shifterOutput[9]" is converted into an equivalent circuit using register "LeftShifter:LfShift|shifterOutput[9]~_emulated" and latch "ArithmeticShiftRight:ASRShift|shifterOutput[9]~37" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 18
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|op_8~0"
+    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|add_sub_9_result_int[0]~0" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_m9f.tdf Line: 72
+    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|add_sub_6_result_int[0]~14" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_m9f.tdf Line: 57
+    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|add_sub_7_result_int[0]~16" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_m9f.tdf Line: 62
+    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|add_sub_8_result_int[0]~18" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_m9f.tdf Line: 67
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "inputSelector" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 10
+Info (21057): Implemented 1157 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 1119 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 126 warnings
+    Info: Peak virtual memory: 438 megabytes
+    Info: Processing ended: Mon Oct 23 14:57:26 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
+
+

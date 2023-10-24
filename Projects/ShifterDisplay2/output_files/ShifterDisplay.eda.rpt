@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ShifterDisplay
-Sat Oct  7 21:02:07 2023
+Tue Oct 10 14:38:26 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Oct  7 21:02:07 2023 ;
+; EDA Netlist Writer Status ; Successful - Tue Oct 10 14:38:26 2023 ;
 ; Revision Name             ; ShifterDisplay                        ;
 ; Top-level Entity Name     ; ShifterDisplay                        ;
 ; Family                    ; Cyclone IV E                          ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                              ;
-+-----------------------------------------------------------------------------------------+
-; Generated Files                                                                         ;
-+-----------------------------------------------------------------------------------------+
-; /mnt/External/Codigos/VHDL/Projects/ShifterDisplay2/simulation/questa/ShifterDisplay.vo ;
-+-----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                   ;
++----------------------------------------------------------------------------------------------+
+; Generated Files                                                                              ;
++----------------------------------------------------------------------------------------------+
+; /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/simulation/questa/ShifterDisplay.vo ;
++----------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,14 +81,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sat Oct  7 21:02:07 2023
+    Info: Processing started: Tue Oct 10 14:38:25 2023
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ShifterDisplay -c ShifterDisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ShifterDisplay.vo in folder "/mnt/External/Codigos/VHDL/Projects/ShifterDisplay2/simulation/questa/" for EDA simulation tool
+Info (204019): Generated file ShifterDisplay.vo in folder "/mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 599 megabytes
-    Info: Processing ended: Sat Oct  7 21:02:07 2023
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Tue Oct 10 14:38:26 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

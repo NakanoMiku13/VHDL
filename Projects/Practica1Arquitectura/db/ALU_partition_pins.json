@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "shifterResult[0]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[1]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[2]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[3]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[4]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[5]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[6]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[7]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[8]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[9]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[6]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[0]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[1]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[2]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[3]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[0]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[1]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "A[8]",
+					"strict" : false
+				},
+				{
+					"name" : "A[9]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

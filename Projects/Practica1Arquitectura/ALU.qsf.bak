@@ -1,0 +1,150 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2023  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+# Date created = 09:54:04  October 20, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ALU_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:31:35  OCTOBER 18, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_FILE /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd
+set_global_assignment -name VHDL_FILE /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd
+set_global_assignment -name SOURCE_FILE /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/constraints.qsf
+set_global_assignment -name VHDL_FILE ArithmeticShiftRight.vhd
+set_global_assignment -name VHDL_FILE Complement2.vhd
+set_global_assignment -name VHDL_FILE BinaryToBCD.vhd
+set_global_assignment -name VHDL_FILE Display.vhd
+set_global_assignment -name VHDL_FILE DecoderBCD.vhd
+set_global_assignment -name VHDL_FILE FullAdder3.vhd
+
+# Pin & Location Assignments
+# ==========================
+set_location_assignment PIN_25 -to reset
+set_location_assignment PIN_23 -to clock
+set_location_assignment PIN_42 -to A[9]
+set_location_assignment PIN_44 -to A[8]
+set_location_assignment PIN_49 -to A[7]
+set_location_assignment PIN_51 -to A[6]
+set_location_assignment PIN_53 -to A[5]
+set_location_assignment PIN_55 -to A[4]
+set_location_assignment PIN_59 -to A[3]
+set_location_assignment PIN_64 -to A[2]
+set_location_assignment PIN_66 -to A[1]
+set_location_assignment PIN_68 -to A[0]
+set_location_assignment PIN_38 -to selector[0]
+set_location_assignment PIN_33 -to selector[1]
+set_location_assignment PIN_31 -to selector[2]
+set_location_assignment PIN_28 -to selector[3]
+set_location_assignment PIN_11 -to shifterResult[9]
+set_location_assignment PIN_7 -to shifterResult[8]
+set_location_assignment PIN_2 -to shifterResult[7]
+set_location_assignment PIN_144 -to shifterResult[6]
+set_location_assignment PIN_142 -to shifterResult[5]
+set_location_assignment PIN_138 -to shifterResult[4]
+set_location_assignment PIN_119 -to shifterResult[3]
+set_location_assignment PIN_114 -to shifterResult[2]
+set_location_assignment PIN_112 -to shifterResult[1]
+set_location_assignment PIN_110 -to shifterResult[0]
+set_location_assignment PIN_133 -to digits[0]
+set_location_assignment PIN_135 -to digits[1]
+set_location_assignment PIN_136 -to digits[2]
+set_location_assignment PIN_137 -to digits[3]
+set_location_assignment PIN_128 -to segments[0]
+set_location_assignment PIN_121 -to segments[1]
+set_location_assignment PIN_125 -to segments[2]
+set_location_assignment PIN_129 -to segments[3]
+set_location_assignment PIN_132 -to segments[4]
+set_location_assignment PIN_126 -to segments[5]
+set_location_assignment PIN_124 -to segments[6]
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name TOP_LEVEL_ENTITY ALU
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name DEVICE AUTO
+
+# EDA Netlist Writer Assignments
+# ==============================
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
+
+# start EDA_TOOL_SETTINGS(eda_simulation)
+# ---------------------------------------
+
+	# EDA Netlist Writer Assignments
+	# ==============================
+
+# end EDA_TOOL_SETTINGS(eda_simulation)
+# -------------------------------------
+
+# -----------------
+# start ENTITY(ALU)
+
+# end ENTITY(ALU)
+# ---------------
+
+# ------------------------
+# start ENTITY(FullAdder2)
+
+	# start DESIGN_PARTITION(Top)
+	# ---------------------------
+
+		# Incremental Compilation Assignments
+		# ===================================
+
+	# end DESIGN_PARTITION(Top)
+	# -------------------------
+
+# end ENTITY(FullAdder2)
+# ----------------------
+set_location_assignment PIN_84 -to B[9]
+set_location_assignment PIN_86 -to B[8]
+set_location_assignment PIN_88 -to B[7]
+set_location_assignment PIN_90 -to B[6]
+set_location_assignment PIN_98 -to B[5]
+set_location_assignment PIN_100 -to B[4]
+set_location_assignment PIN_103 -to B[3]
+set_location_assignment PIN_105 -to B[2]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

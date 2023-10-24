@@ -1,0 +1,91 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity BinaryToBCD is
+	Port(
+		input : in std_logic_vector(9 downto 0);
+		output : out std_logic_vector(15 downto 0);
+		clock, reset : in std_logic
+	);
+end BinaryToBCD;
+architecture ArchBinaryToBCD of BinaryToBCD is
+	signal thousands : std_logic_vector(3 downto 0) := (others => '0');
+	signal hundreds : std_logic_vector(3 downto 0) := (others => '0');
+	signal tens : std_logic_vector(3 downto 0) := (others => '0');
+	signal valu : std_logic_vector(9 downto 0) := input;
+	signal currentSet : std_logic_vector(3 downto 0) := valu(9 downto 6);
+	signal unit : std_logic_vector(3 downto 0) := currentSet;
+	signal counter : integer := 0;
+	signal tempSum : std_logic_vector(3 downto 0) := (others => '0');
+	signal carry : std_logic_vector(0 downto 0) := "0";
+begin
+	process(clock, reset)
+		constant add : std_logic_vector(3 downto 0) := "0001";
+	begin
+		if reset = '0' then
+			valu <= input;
+			thousands <= (others => '0');
+			hundreds <= (others => '0');
+			tens <= (others => '0');
+			unit <= (others => '0');
+			counter <= 0;
+			carry <= "0";
+			tempSum <= (others => '0');
+		elsif rising_edge(clock) then
+			if valu > "0000000000" then
+				if hundreds >= "0101" then
+					tempSum(0) <= hundreds(0) XOR (add(0) XOR carry(0));
+					carry(0) <= hundreds(0) AND (add(0) XOR carry(0));
+					tempSum(1) <= hundreds(1) XOR (add(1) XOR carry(0));
+					carry(0) <= hundreds(1) AND (add(1) XOR carry(0));
+					tempSum(2) <= hundreds(2) XOR (add(2) XOR carry(0));
+					carry(0) <= hundreds(2) AND (add(2) XOR carry(0));
+					tempSum(3) <= hundreds(3) XOR (add(3) XOR carry(0));
+					hundreds <= tempSum;
+					carry <= "0";
+					thousands <= thousands(2 downto 0) & hundreds(3);
+					hundreds <= hundreds(2 downto 0) & tens(3);
+					tens <= tens(2 downto 0) & unit(3);
+					unit <= unit(2 downto 0) & valu(9);
+					valu <= valu(8 downto 0) & '0';
+				end if;
+				if tens >= "0101" then
+					tempSum(0) <= tens(0) XOR (add(0) XOR carry(0));
+					carry(0) <= tens(0) AND (add(0) XOR carry(0));
+					tempSum(1) <= tens(1) XOR (add(1) XOR carry(0));
+					carry(0) <= tens(1) AND (add(1) XOR carry(0));
+					tempSum(2) <= tens(2) XOR (add(2) XOR carry(0));
+					carry(0) <= tens(2) AND (add(2) XOR carry(0));
+					tempSum(3) <= tens(3) XOR (add(3) XOR carry(0));
+					tens <= tempSum;
+					carry <= "0";
+					counter <= 0;
+					thousands <= thousands(2 downto 0) & hundreds(3);
+					hundreds <= hundreds(2 downto 0) & tens(3);
+					tens <= tens(2 downto 0) & unit(3);
+					unit <= unit(2 downto 0) & valu(9);
+					valu <= valu(8 downto 0) & '0';
+				end if;
+				if unit >= "0101" then
+					tempSum(0) <= unit(0) XOR (add(0) XOR carry(0));
+					carry(0) <= unit(0) AND (add(0) XOR carry(0));
+					tempSum(1) <= unit(1) XOR (add(1) XOR carry(0));
+					carry(0) <= unit(1) AND (add(1) XOR carry(0));
+					tempSum(2) <= unit(2) XOR (add(2) XOR carry(0));
+					carry(0) <= unit(2) AND (add(2) XOR carry(0));
+					tempSum(3) <= unit(3) XOR (add(3) XOR carry(0));
+					carry <= "0";
+					thousands <= thousands(2 downto 0) & hundreds(3);
+					hundreds <= hundreds(2 downto 0) & tens(3);
+					tens <= tens(2 downto 0) & unit(3);
+					unit <= unit(2 downto 0) & valu(9);
+					valu <= valu(8 downto 0) & '0';
+				else
+					unit <= unit(2 downto 0) & valu(9);
+					valu <= valu(8 downto 0) & '0';
+					carry <= "0";
+				end if;
+			end if;
+		end if;
+		output <= thousands & hundreds & tens & unit;
+	end process;
+end ArchBinaryToBCD;

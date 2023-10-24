@@ -8,7 +8,7 @@ entity ShifterDisplay is
 	);
 end ShifterDisplay;
 architecture ArchShifterDisplay of ShifterDisplay is
-	signal message : std_logic_vector (76 downto 0) := "11101101011100000011011101110000000101010010101000011100101010010111101011100";
+	signal message : std_logic_vector (27 downto 0) := "1110110101110000001101110111";
 	signal secondClock : std_logic := '0';
 	signal thirdClock : std_logic := '0';
 	signal digitsDisplay : std_logic_vector(3 downto 0) := (others => '1');
@@ -17,6 +17,9 @@ architecture ArchShifterDisplay of ShifterDisplay is
 	signal counter3 : integer := 0;
 	signal counter4 : integer := 0;
 	signal tempLetter : std_logic_vector(6 downto 0) := (others => '1');
+	procedure PrintMessage(inputMessage : in std_logic_vector(55 downto 0); timeout : in integer) is
+	begin
+	end procedure;
 begin
 	-- Display message
 	process(thirdClock, reset)
@@ -24,7 +27,7 @@ begin
 		variable segmenter2: integer := 7;
 		variable segmenter3: integer := 14;
 		variable segmenter4: integer := 21;
-		constant size : integer := 76;
+		constant size : integer := 27;
 		variable aux : integer := 0;
 	begin
 		if reset = '0' then
@@ -36,6 +39,8 @@ begin
 			segmenter2 := 7;
 			segmenter3 := 14;
 			segmenter4 := 21;
+			aux := 0;
+			tempLetter <= (others => '1');
 		elsif rising_edge(thirdClock) then
 			if counter < 20000 then
 				digits <= not "0001";
@@ -100,17 +105,9 @@ begin
 					digits <= not "0100";
 					segments <= not message(size - segmenter3 downto size - 6 - segmenter3);
 					counter4 <= counter4 + 1;
-				when 2 =>
+				when others =>
 					digits <= not "0010";
 					segments <= not message(size - segmenter4 downto size - 6 - segmenter4);
-					counter4 <= counter4 + 1;
-				when others =>
-					if aux = 0 then
-						segmenter := segmenter + 21;
-						aux := 1;
-					end if;
-					digits <= not "0001";
-					segments <= not message(size - segmenter downto size - 6 - segmenter);
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
@@ -120,85 +117,22 @@ begin
 					digits <= not "1000";
 					segments <= not message(size - segmenter3 downto size - 6 - segmenter3);
 					counter4 <= counter4 + 1;
-				when 1 =>
+				when others =>
 					digits <= not "0100";
 					segments <= not message(size - segmenter4 downto size - 6 - segmenter4);
-					counter4 <= counter4 + 1;
-				when 2 => 
-					digits <= not "0010";
-					segments <= not message(size - segmenter downto size - 6 - segmenter);
-					counter4 <= counter4 + 1;
-				when others =>
-					if aux = 1 then
-						segmenter2 := segmenter + 7;
-						aux := 0;
-					end if;
-					digits <= not "0001";
-					segments <= not message(size - segmenter2 downto size - 6 - segmenter2);
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
 			elsif counter < 140000 then
-				case counter4 is
-				when 0 =>
-					digits <= not "1000";
-					segments <= not message(size - segmenter4 downto size - 6 - segmenter4);
-					counter4 <= counter4 + 1;
-				when 1 => 
-					digits <= not "0100";
-					segments <= not message(size - segmenter downto size - 6 - segmenter);
-					counter4 <= counter4 + 1;
-				when 2 =>
-					digits <= not "0010";
-					segments <= not message(size - segmenter2 downto size - 6 - segmenter2);
-					counter4 <= counter4 + 1;
-				when others =>
-					digits <= not "0001";
-					if aux = 0 then
-						segmenter3 := segmenter2 + 7;
-						aux := 1;
-					end if;
-					segments <= not message(size - segmenter3 downto size - 6 - segmenter3);
-					counter4 <= 0;
-				end case;
-				counter <= counter + 1;
-			elsif counter < 160000 then
-				case counter4 is
-				when 0 => 
-					digits <= not "1000";
-					segments <= not message(size - segmenter downto size - 6 - segmenter);
-					counter4 <= counter4 + 1;
-				when 1 =>
-					digits <= not "0100";
-					segments <= not message(size - segmenter2 downto size - 6 - segmenter2);
-					counter4 <= counter4 + 1;
-				when 2 =>
-					digits <= not "0010";
-					segments <= not message(size - segmenter3 downto size - 6 - segmenter3);
-					counter4 <= 0;
-				when others =>
-					digits <= not "0001";
-					if aux = 1 then
-						segmenter4 := segmenter3 + 7;
-						aux := 0;
-					end if;
-					segments <= not message(size - segmenter4 downto size - 6 - segmenter4);
-					counter4 <= 0;
-				end case;
+				digits <= not "1000";
+				segments <= not message(size - segmenter4 downto size - 6 - segmenter4);
 				counter <= counter + 1;
 			else
 				digits <= not "0000";
-				if segmenter3 >= size or segmenter4 >= size then
-					segmenter := 0;
-					segmenter2 := 7;
-					segmenter3 := 14;
-					segmenter4 := 21;
-				else
-					segmenter := segmenter + 28;
-					segmenter2 := segmenter + 7;
-					segmenter3 := segmenter2 + 7;
-					segmenter4 :=  segmenter3 + 7;
-				end if;
+				segmenter := 0;
+				segmenter2 := 7;
+				segmenter3 := 14;
+				segmenter4 := 21;
 				counter <= 0;
 			end if;
 		end if;

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("/mnt/External/Codigos/VHDL/Projects/ShifterDisplay2/output_files/") File("ShifterDisplay.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("/mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/output_files/") File("ShifterDisplay.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
