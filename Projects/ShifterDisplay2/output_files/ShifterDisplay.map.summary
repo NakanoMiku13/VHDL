@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Oct 10 14:38:09 2023
+Analysis & Synthesis Status : Successful - Sat Nov  4 21:38:28 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : ShifterDisplay
 Top-level Entity Name : ShifterDisplay
 Family : Cyclone IV E
-Total logic elements : 173
-    Total combinational functions : 173
-    Dedicated logic registers : 78
-Total registers : 78
+Total logic elements : 179
+    Total combinational functions : 178
+    Dedicated logic registers : 80
+Total registers : 80
 Total pins : 13
 Total virtual pins : 0
 Total memory bits : 0

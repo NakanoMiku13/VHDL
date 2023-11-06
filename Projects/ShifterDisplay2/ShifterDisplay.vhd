@@ -9,6 +9,8 @@ entity ShifterDisplay is
 end ShifterDisplay;
 architecture ArchShifterDisplay of ShifterDisplay is
 	signal message : std_logic_vector (27 downto 0) := "1110110101110000001101110111";
+	signal message2 : std_logic_vector (27 downto 0) := "1110110101110000001100000000";
+	signal NoneMessage : std_logic_vector (27 downto 0) := (others => '0');
 	signal secondClock : std_logic := '0';
 	signal thirdClock : std_logic := '0';
 	signal digitsDisplay : std_logic_vector(3 downto 0) := (others => '1');
@@ -16,6 +18,7 @@ architecture ArchShifterDisplay of ShifterDisplay is
 	signal counter2 : integer := 0;
 	signal counter3 : integer := 0;
 	signal counter4 : integer := 0;
+	signal counter5 : integer := 200;
 	signal tempLetter : std_logic_vector(6 downto 0) := (others => '1');
 	procedure PrintMessage(inputMessage : in std_logic_vector(55 downto 0); timeout : in integer) is
 	begin
@@ -42,12 +45,12 @@ begin
 			aux := 0;
 			tempLetter <= (others => '1');
 		elsif rising_edge(thirdClock) then
-			if counter < 20000 then
+			if counter < 200 then
 				digits <= not "0001";
 				tempLetter <= message(size - segmenter downto size - 6 - segmenter);
 				segments <= not tempLetter;
 				counter <= counter + 1;
-			elsif counter < 40000 then
+			elsif counter < 400 then
 				case counter4 is
 				when 0 => 
 					digits <= not "0010";
@@ -59,7 +62,7 @@ begin
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
-			elsif counter < 60000 then
+			elsif counter < 600 then
 				case counter4 is
 				when 0 =>
 					digits <= not "0100";
@@ -75,7 +78,7 @@ begin
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
-			elsif counter < 80000 then
+			elsif counter < 800 then
 				case counter4 is
 				when 0 => 
 					digits <= not "1000";
@@ -95,7 +98,7 @@ begin
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
-			elsif counter < 100000 then
+			elsif counter < 1000 then
 				case counter4 is
 				when 0 =>
 					digits <= not "1000";
@@ -111,7 +114,7 @@ begin
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
-			elsif counter < 120000 then
+			elsif counter < 1200 then
 				case counter4 is
 				when 0 => 
 					digits <= not "1000";
@@ -123,7 +126,7 @@ begin
 					counter4 <= 0;
 				end case;
 				counter <= counter + 1;
-			elsif counter < 140000 then
+			elsif counter < 1400 then
 				digits <= not "1000";
 				segments <= not message(size - segmenter4 downto size - 6 - segmenter4);
 				counter <= counter + 1;
@@ -134,6 +137,13 @@ begin
 				segmenter3 := 14;
 				segmenter4 := 21;
 				counter <= 0;
+				if message2 /= NoneMessage then
+					message <= message2;
+					message2 <= NoneMessage;
+				else
+					message <= "1110110101110000001101110111";
+					message2 <= "1110110101110000001100000000";
+				end if;
 			end if;
 		end if;
 	end process;
@@ -160,7 +170,7 @@ begin
 			thirdClock <= '0';
 			counter3 <= 0;
 		elsif rising_edge(clock) then
-			if counter3 = 500 then
+			if counter3 = 50000 then
 				counter3 <= 0;
 				thirdClock <= not thirdClock;
 			else

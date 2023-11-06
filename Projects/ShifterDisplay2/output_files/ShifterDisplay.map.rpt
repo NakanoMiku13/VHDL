@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ShifterDisplay
-Tue Oct 10 14:38:09 2023
+Sat Nov  4 21:38:28 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -14,11 +14,12 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +46,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 10 14:38:09 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov  4 21:38:28 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; ShifterDisplay                                 ;
 ; Top-level Entity Name              ; ShifterDisplay                                 ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 173                                            ;
-;     Total combinational functions  ; 173                                            ;
-;     Dedicated logic registers      ; 78                                             ;
-; Total registers                    ; 78                                             ;
+; Total logic elements               ; 179                                            ;
+;     Total combinational functions  ; 178                                            ;
+;     Dedicated logic registers      ; 80                                             ;
+; Total registers                    ; 80                                             ;
 ; Total pins                         ; 13                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -179,20 +180,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 173         ;
+; Estimated Total logic elements              ; 179         ;
 ;                                             ;             ;
-; Total combinational functions               ; 173         ;
+; Total combinational functions               ; 178         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 81          ;
-;     -- 3 input functions                    ; 21          ;
-;     -- <=2 input functions                  ; 71          ;
+;     -- 4 input functions                    ; 83          ;
+;     -- 3 input functions                    ; 17          ;
+;     -- <=2 input functions                  ; 78          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 111         ;
+;     -- normal mode                          ; 116         ;
 ;     -- arithmetic mode                      ; 62          ;
 ;                                             ;             ;
-; Total registers                             ; 78          ;
-;     -- Dedicated logic registers            ; 78          ;
+; Total registers                             ; 80          ;
+;     -- Dedicated logic registers            ; 80          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 13          ;
@@ -200,9 +201,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 78          ;
-; Total fan-out                               ; 819         ;
-; Average fan-out                             ; 2.96        ;
+; Maximum fan-out                             ; 79          ;
+; Total fan-out                               ; 833         ;
+; Average fan-out                             ; 2.93        ;
 +---------------------------------------------+-------------+
 
 
@@ -211,7 +212,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
-; |ShifterDisplay            ; 173 (173)           ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |ShifterDisplay     ; ShifterDisplay ; work         ;
+; |ShifterDisplay            ; 178 (178)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |ShifterDisplay     ; ShifterDisplay ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -233,13 +234,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; segmenter4[2]                           ; Stuck at VCC due to stuck port data_in ;
 ; segmenter4[1]                           ; Stuck at GND due to stuck port data_in ;
 ; segmenter4[0]                           ; Stuck at VCC due to stuck port data_in ;
-; tempLetter[1,2,4..6]                    ; Stuck at VCC due to stuck port data_in ;
+; message2[0..7,10..15,19,21,24]          ; Stuck at GND due to stuck port data_in ;
+; message[3,7,10..15,19,21,24]            ; Stuck at GND due to stuck port data_in ;
 ; tempLetter[0]                           ; Merged with tempLetter[3]              ;
 ; counter4[2..30]                         ; Merged with counter4[31]               ;
-; segments[4]~reg0                        ; Merged with segments[6]~reg0           ;
+; segments[6]~reg0                        ; Merged with segments[4]~reg0           ;
+; message[1,2,4..6]                       ; Merged with message[0]                 ;
+; message[8,9,17,18,20,22,23,25..27]      ; Merged with message[16]                ;
+; tempLetter[2,4..6]                      ; Merged with tempLetter[1]              ;
+; message2[8,9,17,18,20,22,23,25..27]     ; Merged with message2[16]               ;
 ; counter4[31]                            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 165 ;                                        ;
+; message[16]                             ; Stuck at VCC due to stuck port data_in ;
+; tempLetter[1]                           ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 219 ;                                        ;
 +-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; message2[24]  ; Stuck at GND              ; message[24]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[21]  ; Stuck at GND              ; message[21]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[19]  ; Stuck at GND              ; message[19]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[15]  ; Stuck at GND              ; message[15]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[14]  ; Stuck at GND              ; message[14]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[13]  ; Stuck at GND              ; message[13]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[12]  ; Stuck at GND              ; message[12]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[11]  ; Stuck at GND              ; message[11]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[10]  ; Stuck at GND              ; message[10]                            ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[7]   ; Stuck at GND              ; message[7]                             ;
+;               ; due to stuck port data_in ;                                        ;
+; message2[3]   ; Stuck at GND              ; message[3]                             ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -247,12 +285,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 78    ;
+; Total registers                              ; 80    ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 78    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -270,10 +308,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; segments[1]~reg0                        ; 2       ;
 ; segments[2]~reg0                        ; 2       ;
 ; segments[3]~reg0                        ; 2       ;
-; segments[6]~reg0                        ; 3       ;
+; segments[4]~reg0                        ; 3       ;
 ; segments[5]~reg0                        ; 2       ;
+; message[0]                              ; 9       ;
 ; tempLetter[3]                           ; 3       ;
-; Total number of inverted registers = 11 ;         ;
+; message2[16]                            ; 1       ;
+; Total number of inverted registers = 13 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -283,21 +323,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 78                          ;
+; cycloneiii_ff         ; 80                          ;
 ;     CLR               ; 45                          ;
 ;     CLR SCLR          ; 32                          ;
 ;     CLR SLD           ; 1                           ;
-; cycloneiii_lcell_comb ; 183                         ;
+;     ENA               ; 2                           ;
+; cycloneiii_lcell_comb ; 188                         ;
 ;     arith             ; 62                          ;
 ;         2 data inputs ; 62                          ;
-;     normal            ; 121                         ;
-;         1 data inputs ; 12                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 81                          ;
+;     normal            ; 126                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 17                          ;
+;         4 data inputs ; 83                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.47                        ;
+; Average LUT depth     ; 4.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -306,7 +347,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -316,7 +357,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Tue Oct 10 14:37:54 2023
+    Info: Processing started: Sat Nov  4 21:38:19 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ShifterDisplay -c ShifterDisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -324,21 +365,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file Shifter
     Info (12022): Found design unit 1: ShifterDisplay-ArchShifterDisplay File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 10
     Info (12023): Found entity 1: ShifterDisplay File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 3
 Info (12127): Elaborating entity "ShifterDisplay" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at ShifterDisplay.vhd(12): used explicit default value for signal "message" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 12
-Warning (10036): Verilog HDL or VHDL warning at ShifterDisplay.vhd(32): object "aux" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 32
-Info (13000): Registers with preset signals will power-up high File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 34
+Warning (10540): VHDL Signal Declaration warning at ShifterDisplay.vhd(13): used explicit default value for signal "NoneMessage" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 13
+Warning (10036): Verilog HDL or VHDL warning at ShifterDisplay.vhd(34): object "aux" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 34
+Info (13000): Registers with preset signals will power-up high File: /mnt/External/Codigos/VHDL/VHDL/Projects/ShifterDisplay2/ShifterDisplay.vhd Line: 36
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 186 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 192 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 173 logic cells
+    Info (21061): Implemented 179 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 422 megabytes
-    Info: Processing ended: Tue Oct 10 14:38:09 2023
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Processing ended: Sat Nov  4 21:38:28 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:16
 
 

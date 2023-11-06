@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "motor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "motor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "motor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "motor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "X",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Oct 10 14:38:16 2023
+Fitter Status : Successful - Sat Nov  4 21:38:32 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : ShifterDisplay
 Top-level Entity Name : ShifterDisplay
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 181 / 6,272 ( 3 % )
-    Total combinational functions : 173 / 6,272 ( 3 % )
-    Dedicated logic registers : 78 / 6,272 ( 1 % )
-Total registers : 78
+Total logic elements : 180 / 6,272 ( 3 % )
+    Total combinational functions : 179 / 6,272 ( 3 % )
+    Dedicated logic registers : 80 / 6,272 ( 1 % )
+Total registers : 80
 Total pins : 13 / 92 ( 14 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
