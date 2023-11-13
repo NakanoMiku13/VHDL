@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity ROM is
+	Port(
+		direction : in std_logic_vector(3 downto 0);
+		memoryValue : out std_logic_vector(15 downto 0)
+	);
+end ROM;
+architecture ArchROM of ROM is
+begin
+
+end ArchROM;

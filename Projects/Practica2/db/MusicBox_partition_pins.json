@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "display[0]",
-					"strict" : false
-				},
-				{
 					"name" : "display[1]",
 					"strict" : false
 				},
@@ -32,15 +28,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "display[5]",
-					"strict" : false
-				},
-				{
 					"name" : "display[6]",
-					"strict" : false
-				},
-				{
-					"name" : "digits[0]",
 					"strict" : false
 				},
 				{
@@ -53,18 +41,6 @@
 				},
 				{
 					"name" : "rst",
-					"strict" : false
-				},
-				{
-					"name" : "selector[1]",
-					"strict" : false
-				},
-				{
-					"name" : "selector[0]",
-					"strict" : false
-				},
-				{
-					"name" : "selector[2]",
 					"strict" : false
 				},
 				{

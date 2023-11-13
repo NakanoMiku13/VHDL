@@ -8,25 +8,18 @@ entity Complement2 is
 	);
 end Complement2;
 architecture ArchComplement2 of Complement2 is
-	signal output : std_logic_vector(9 downto 0) := not A;
-	signal counter : integer := 0;
+	signal notA : std_logic_vector(9 downto 0) := not A;
+	signal B : std_logic_vector(9 downto 0) := "0000000001";
+	signal carry_in, result : std_logic_vector(10 downto 0) := (others => '0');
+	component FullAdder3 is
+	Port(
+		A, B, cin, X : in std_logic;
+		result, cout: out std_logic
+	);
+	end component;
 begin
-	process(clock, reset)
-	begin
-		if reset = '0' then
-			output <= not A;
-			counter <= 0;
-		elsif rising_edge(clock) then
-			if counter = 0 then
-				output <= not A;
-			end if;
-			if counter < 10 then
-				output(counter) <= output(counter) XOR '1';
-				counter <= counter + 1;
-			else
-				output <= output;
-			end if;
-		end if;
-		complement <= output;
-	end process;
+	adder1 : for i in 0 to 4 generate
+		FullAdder1 : FullAdder3 Port Map (A => notA(i), B => B(i), X => '0', cin => carry_in(i), result => result(i), cout => carry_in(i+1));
+	end generate;
+	complement <= result(9 downto 0);
 end ArchComplement2;

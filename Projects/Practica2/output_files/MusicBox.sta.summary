@@ -3,111 +3,111 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.914
-TNS   : -66.012
+Slack : -2.522
+TNS   : -94.551
 
 Type  : Slow 1200mV 85C Model Setup 'Slatch:SlatchI|Q'
-Slack : -1.206
-TNS   : -1.940
+Slack : -1.181
+TNS   : -1.906
 
 Type  : Slow 1200mV 85C Model Setup 'secondClock'
-Slack : -0.621
-TNS   : -5.508
+Slack : -0.481
+TNS   : -3.706
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.357
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'secondClock'
-Slack : 0.357
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Slatch:SlatchI|Q'
-Slack : 0.615
+Slack : 0.598
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'secondClock'
+Slack : 0.825
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -37.000
+TNS   : -68.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'secondClock'
 Slack : -1.000
-TNS   : -12.000
+TNS   : -9.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Slatch:SlatchI|Q'
-Slack : 0.446
+Slack : 0.447
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.533
-TNS   : -56.280
+Slack : -2.138
+TNS   : -76.573
 
 Type  : Slow 1200mV 0C Model Setup 'Slatch:SlatchI|Q'
-Slack : -1.083
-TNS   : -1.677
+Slack : -1.055
+TNS   : -1.634
 
 Type  : Slow 1200mV 0C Model Setup 'secondClock'
-Slack : -0.450
-TNS   : -3.881
+Slack : -0.346
+TNS   : -2.566
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.311
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'secondClock'
-Slack : 0.311
+Slack : 0.297
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Slatch:SlatchI|Q'
-Slack : 0.589
+Slack : 0.573
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'secondClock'
+Slack : 0.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -37.000
+TNS   : -68.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'secondClock'
 Slack : -1.000
-TNS   : -12.000
+TNS   : -9.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Slatch:SlatchI|Q'
-Slack : 0.479
+Slack : 0.478
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.172
-TNS   : -23.328
+Slack : -1.031
+TNS   : -26.080
 
 Type  : Fast 1200mV 0C Model Setup 'Slatch:SlatchI|Q'
-Slack : -0.434
-TNS   : -0.434
+Slack : -0.423
+TNS   : -0.423
 
 Type  : Fast 1200mV 0C Model Setup 'secondClock'
-Slack : 0.057
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.187
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'secondClock'
-Slack : 0.187
+Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Slatch:SlatchI|Q'
-Slack : 0.326
+Slack : 0.314
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'secondClock'
+Slack : 0.418
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -39.195
+TNS   : -72.230
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'secondClock'
 Slack : -1.000
-TNS   : -12.000
+TNS   : -9.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Slatch:SlatchI|Q'
-Slack : 0.440
+Slack : 0.441
 TNS   : 0.000
 
 ------------------------------------------------------------

@@ -8,7 +8,7 @@ entity MusicBox is
         clk : in  STD_LOGIC;
         rst : in  STD_LOGIC;
 		  set, slatchReset : in std_logic;
-		  selector : in std_logic_vector(2 downto 0);
+		  --selector : in std_logic_vector(2 downto 0);
         buzzer_out, buzzer_out2 : out  STD_LOGIC;
 		  display : out std_logic_vector(6 downto 0);
 		  digits : out std_logic_vector(3 downto 0)
@@ -19,6 +19,7 @@ architecture Behavioral of MusicBox is
     signal counter : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
     signal DoF : STD_LOGIC_VECTOR(15 downto 0) := "1111000011101110";
 	 signal ReF : STD_LOGIC_VECTOR(15 downto 0) := "1111000011101110";
+	 signal selector : std_logic_vector(2 downto 0) := "000";
 	 signal MiF : STD_LOGIC_VECTOR(15 downto 0) := "1111110101110110";
 	 signal FaF : STD_LOGIC_VECTOR(15 downto 0) := "1111111111001011";
 	 signal SolF : STD_LOGIC_VECTOR(15 downto 0) := "1000100001110011";
@@ -30,6 +31,7 @@ architecture Behavioral of MusicBox is
 	 signal digit : integer := 0;
 	 signal secondClock : std_logic := '0';
 	 signal counter2 : integer range 0 to 5000;
+	 signal counter3 : integer := 0;
 	 signal Q : std_logic := '1';
 	 signal NQ : std_logic := '0';
 	 component Slatch
@@ -44,6 +46,7 @@ begin
 			S => set, R => slatchReset,
 			Q => Q, NQ => NQ
 		);
+	-- Sound box
     process(clk, rst)
     begin
         if rst = '0' then
@@ -106,6 +109,23 @@ begin
     end process;
 	 
 	 
+	 process(clk, rst)
+	 begin
+		if rst = '0' then
+			counter3 <= 0;
+			selector <= "111";
+		elsif rising_edge(clk) then
+			if counter3 = 100 then
+				counter3 <= 0;
+			elsif counter3 > 50 and counter3 < 100 then
+				counter3 <= counter3 + 1;
+				selector <= "111";
+			else
+				selector <= "000";
+				counter3 <= counter3 + 1;
+			end if;
+		end if;
+	 end process;
 	 -- Divisor de frecuencia
 	 process(clk, rst)
 	 begin

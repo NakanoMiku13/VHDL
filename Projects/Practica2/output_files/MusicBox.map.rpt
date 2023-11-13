@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MusicBox
-Mon Oct 16 15:09:41 2023
+Thu Nov  9 16:25:24 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -15,13 +15,14 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Port Connectivity Checks: "Slatch:SlatchI"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "Slatch:SlatchI"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +49,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 16 15:09:41 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov  9 16:25:24 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; MusicBox                                       ;
 ; Top-level Entity Name              ; MusicBox                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 105                                            ;
-;     Total combinational functions  ; 105                                            ;
-;     Dedicated logic registers      ; 46                                             ;
-; Total registers                    ; 46                                             ;
-; Total pins                         ; 20                                             ;
+; Total logic elements               ; 122                                            ;
+;     Total combinational functions  ; 115                                            ;
+;     Dedicated logic registers      ; 74                                             ;
+; Total registers                    ; 74                                             ;
+; Total pins                         ; 17                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -167,14 +168,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------+---------+
-; Slatch.vhdl                      ; yes             ; User VHDL File        ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl  ;         ;
-; MusicBox.vhd                     ; yes             ; Auto-Found VHDL File  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; MusicBox.vhd                     ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd ;         ;
+; Slatch.vhdl                      ; yes             ; User VHDL File  ; /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl  ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -182,30 +183,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 105       ;
+; Estimated Total logic elements              ; 122       ;
 ;                                             ;           ;
-; Total combinational functions               ; 105       ;
+; Total combinational functions               ; 115       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 46        ;
-;     -- 3 input functions                    ; 13        ;
-;     -- <=2 input functions                  ; 46        ;
+;     -- 4 input functions                    ; 26        ;
+;     -- 3 input functions                    ; 7         ;
+;     -- <=2 input functions                  ; 82        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 78        ;
-;     -- arithmetic mode                      ; 27        ;
+;     -- normal mode                          ; 57        ;
+;     -- arithmetic mode                      ; 58        ;
 ;                                             ;           ;
-; Total registers                             ; 46        ;
-;     -- Dedicated logic registers            ; 46        ;
+; Total registers                             ; 74        ;
+;     -- Dedicated logic registers            ; 74        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 20        ;
+; I/O pins                                    ; 17        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 46        ;
-; Total fan-out                               ; 498       ;
-; Average fan-out                             ; 2.61      ;
+; Maximum fan-out                             ; 74        ;
+; Total fan-out                               ; 534       ;
+; Average fan-out                             ; 2.39      ;
 +---------------------------------------------+-----------+
 
 
@@ -214,7 +215,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
-; |MusicBox                  ; 105 (104)           ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |MusicBox                ; MusicBox    ; work         ;
+; |MusicBox                  ; 115 (114)           ; 74 (74)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |MusicBox                ; MusicBox    ; work         ;
 ;    |Slatch:SlatchI|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MusicBox|Slatch:SlatchI ; Slatch      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -241,8 +242,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; te[3..31]                              ; Stuck at GND due to stuck port data_in ;
 ; digits[3]~reg0                         ; Stuck at VCC due to stuck port data_in ;
 ; digit[2..31]                           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 60 ;                                        ;
+; selector[0,1]                          ; Merged with selector[2]                ;
+; te[1,2]                                ; Stuck at GND due to stuck port data_in ;
+; display[5]~reg0                        ; Stuck at VCC due to stuck port data_in ;
+; display[0]~reg0                        ; Stuck at VCC due to stuck port data_in ;
+; digits[0]~reg0                         ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 67 ;                                        ;
 +----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                  ;
++---------------+---------------------------+--------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register           ;
++---------------+---------------------------+--------------------------------------------------+
+; te[31]        ; Stuck at GND              ; display[5]~reg0, display[0]~reg0, digits[0]~reg0 ;
+;               ; due to stuck port data_in ;                                                  ;
++---------------+---------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -250,33 +266,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 46    ;
-; Number of registers using Synchronous Clear  ; 16    ;
+; Total registers                              ; 74    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 33    ;
+; Number of registers using Asynchronous Clear ; 61    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 13    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; display[0]~reg0                         ; 1       ;
-; display[1]~reg0                         ; 1       ;
-; display[2]~reg0                         ; 1       ;
-; display[3]~reg0                         ; 1       ;
-; display[4]~reg0                         ; 1       ;
-; display[5]~reg0                         ; 1       ;
-; display[6]~reg0                         ; 1       ;
-; digits[0]~reg0                          ; 1       ;
-; digits[1]~reg0                          ; 1       ;
-; digits[2]~reg0                          ; 1       ;
-; Total number of inverted registers = 10 ;         ;
-+-----------------------------------------+---------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; display[1]~reg0                        ; 1       ;
+; display[2]~reg0                        ; 1       ;
+; display[3]~reg0                        ; 1       ;
+; display[4]~reg0                        ; 1       ;
+; display[6]~reg0                        ; 1       ;
+; digits[1]~reg0                         ; 1       ;
+; digits[2]~reg0                         ; 1       ;
+; selector[2]                            ; 3       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -284,9 +298,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |MusicBox|digit[0]         ;
-; 13:1               ; 16 bits   ; 128 LEs       ; 16 LEs               ; 112 LEs                ; Yes        ; |MusicBox|counter[2]       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MusicBox|display[0]~reg0  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MusicBox|counter[15]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -304,23 +316,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 20                          ;
-; cycloneiii_ff         ; 46                          ;
-;     CLR               ; 17                          ;
-;     CLR SCLR          ; 16                          ;
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 74                          ;
+;     CLR               ; 61                          ;
 ;     ENA               ; 13                          ;
-; cycloneiii_lcell_comb ; 116                         ;
-;     arith             ; 27                          ;
-;         2 data inputs ; 27                          ;
-;     normal            ; 89                          ;
+; cycloneiii_lcell_comb ; 123                         ;
+;     arith             ; 58                          ;
+;         2 data inputs ; 58                          ;
+;     normal            ; 65                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 46                          ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 26                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.01                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -339,52 +350,57 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Mon Oct 16 15:09:34 2023
+    Info: Processing started: Thu Nov  9 16:25:16 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MusicBox -c MusicBox
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file MusicBox.vhd
+    Info (12022): Found design unit 1: MusicBox-Behavioral File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 18
+    Info (12023): Found entity 1: MusicBox File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file Slatch.vhdl
     Info (12022): Found design unit 1: Slatch-ArchSlatch File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl Line: 9
     Info (12023): Found entity 1: Slatch File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl Line: 3
-Warning (12125): Using design file MusicBox.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: MusicBox-Behavioral File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 18
-    Info (12023): Found entity 1: MusicBox File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 6
 Info (12127): Elaborating entity "MusicBox" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(20): used explicit default value for signal "DoF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 20
 Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(21): used explicit default value for signal "ReF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 21
-Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(22): used explicit default value for signal "MiF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 22
-Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(23): used explicit default value for signal "FaF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 23
-Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(24): used explicit default value for signal "SolF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 24
-Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(25): used explicit default value for signal "LaF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 25
-Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(26): used explicit default value for signal "SiF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at MusicBox.vhd(34): object "NQ" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 34
-Warning (10492): VHDL Process Statement warning at MusicBox.vhd(101): signal "Q" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at MusicBox.vhd(102): signal "buzzer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at MusicBox.vhd(104): signal "buzzer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 104
-Warning (10631): VHDL Process Statement warning at MusicBox.vhd(47): inferring latch(es) for signal or variable "buzzer_out", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 47
-Warning (10631): VHDL Process Statement warning at MusicBox.vhd(47): inferring latch(es) for signal or variable "buzzer_out2", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 47
-Info (10041): Inferred latch for "buzzer_out2" at MusicBox.vhd(47) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 47
-Info (10041): Inferred latch for "buzzer_out" at MusicBox.vhd(47) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 47
-Info (12128): Elaborating entity "Slatch" for hierarchy "Slatch:SlatchI" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 42
+Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(23): used explicit default value for signal "MiF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 23
+Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(24): used explicit default value for signal "FaF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 24
+Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(25): used explicit default value for signal "SolF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 25
+Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(26): used explicit default value for signal "LaF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 26
+Warning (10540): VHDL Signal Declaration warning at MusicBox.vhd(27): used explicit default value for signal "SiF" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at MusicBox.vhd(36): object "NQ" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at MusicBox.vhd(104): signal "Q" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at MusicBox.vhd(105): signal "buzzer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at MusicBox.vhd(107): signal "buzzer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at MusicBox.vhd(50): inferring latch(es) for signal or variable "buzzer_out", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at MusicBox.vhd(50): inferring latch(es) for signal or variable "buzzer_out2", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 50
+Info (10041): Inferred latch for "buzzer_out2" at MusicBox.vhd(50) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 50
+Info (10041): Inferred latch for "buzzer_out" at MusicBox.vhd(50) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 50
+Info (12128): Elaborating entity "Slatch" for hierarchy "Slatch:SlatchI" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at Slatch.vhdl(11): inferring latch(es) for signal or variable "Q", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl Line: 11
 Warning (10631): VHDL Process Statement warning at Slatch.vhdl(11): inferring latch(es) for signal or variable "NQ", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl Line: 11
 Info (10041): Inferred latch for "NQ" at Slatch.vhdl(11) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl Line: 11
 Info (10041): Inferred latch for "Q" at Slatch.vhdl(11) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/Slatch.vhdl Line: 11
-Info (13000): Registers with preset signals will power-up high File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 127
+Info (13000): Registers with preset signals will power-up high File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 147
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "digits[3]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 127
+    Warning (13410): Pin "display[0]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 147
+    Warning (13410): Pin "display[5]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 147
+    Warning (13410): Pin "digits[0]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 147
+    Warning (13410): Pin "digits[3]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 147
 Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register selector[2] will power up to High File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica2/MusicBox.vhd Line: 114
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 125 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
+Info (21057): Implemented 142 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 105 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 411 megabytes
-    Info: Processing ended: Mon Oct 16 15:09:41 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21061): Implemented 125 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 410 megabytes
+    Info: Processing ended: Thu Nov  9 16:25:24 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:16
 
 

@@ -45,7 +45,7 @@ begin
 			FullAdder1_2 : FullAdder3 Port Map (A => partial(i), B => partial2(i), X => '0', cin => carry_in3(i), result => product(i), cout => carry_in3(i+1));
 		end generate;
 		a_decimal <= conv_integer(A);
-		b_decimal <= conv_integer(B);
-		product2 <= conv_std_logic_vector(a_decimal * b_decimal, 10);
+		 b_decimal <= conv_integer(B);
+		 product2 <= conv_std_logic_vector(a_decimal * b_decimal, 10);
 		result <= product2;
 end ArchMultiplier;

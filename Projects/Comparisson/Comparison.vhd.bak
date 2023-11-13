@@ -1,0 +1,36 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity Comparator is
+    Port(
+        X,Y : in std_logic_vector(3 downto 0);
+        higher, equal, lower : std_logic
+    );
+end Comparator;
+architecture ArchComparator of Comparator is
+    signal e : std_logic;
+    signal h, l : std_logic_vector(4 downto 0);
+    component Comp1Bit is
+        Port(
+            x, y, hi, li : in std_logic;
+            h, e, l : out std_logic
+        );
+    end component;
+begin
+    Comparison : for i in 0 to 3 generate        
+        Comp : Comp1Bit Port Map(x => X(i), y => Y(i), hi => h(i), h => h(i+1), li => l(i), l => l(i+1), e => e);
+    end generate;
+    -- Is negative
+    if X(3) == '1' and Y(3) == '0' then
+        higher <= '0';
+        lower <= not higher;
+        equal <= higher;
+    elsif X(3) == '1' and Y(3) == '1' then
+        higher <= l(4);
+        lower <= h(4);
+        equal <= e;
+    else
+        higher <= h(4);
+        lower <= l(4);
+        equal <= e;
+    end if;
+end ArchComparator;

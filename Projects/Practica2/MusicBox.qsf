@@ -48,16 +48,6 @@ set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
 set_location_assignment PIN_23 -to clk
 set_location_assignment PIN_25 -to rst
 set_location_assignment PIN_110 -to buzzer_out
-set_location_assignment PIN_88 -to do
-set_location_assignment PIN_105 -to re
-set_location_assignment PIN_104 -to mi
-set_location_assignment PIN_103 -to fa
-set_location_assignment PIN_98 -to sol
-set_location_assignment PIN_100 -to la
-set_location_assignment PIN_91 -to si
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_128 -to display[0]
 set_location_assignment PIN_121 -to display[1]
 set_location_assignment PIN_125 -to display[2]
@@ -69,13 +59,13 @@ set_location_assignment PIN_133 -to digits[0]
 set_location_assignment PIN_135 -to digits[1]
 set_location_assignment PIN_136 -to digits[2]
 set_location_assignment PIN_137 -to digits[3]
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VHDL_FILE Slatch.vhdl
 set_location_assignment PIN_113 -to set
 set_location_assignment PIN_111 -to buzzer_out2
-set_location_assignment PIN_88 -to selector[0]
-set_location_assignment PIN_89 -to selector[1]
-set_location_assignment PIN_90 -to selector[2]
 set_location_assignment PIN_112 -to slatchReset
+set_global_assignment -name SOURCE_FILE constraints.qsf
+set_global_assignment -name VHDL_FILE MusicBox.vhd
+set_global_assignment -name VHDL_FILE Slatch.vhdl
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

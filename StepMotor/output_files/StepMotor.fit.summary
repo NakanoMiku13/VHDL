@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Nov  5 14:12:48 2023
+Fitter Status : Successful - Thu Nov  9 15:35:53 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : StepMotor
 Top-level Entity Name : StepMotor
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 62 / 6,272 ( < 1 % )
-    Total combinational functions : 56 / 6,272 ( < 1 % )
+Total logic elements : 66 / 6,272 ( 1 % )
+    Total combinational functions : 60 / 6,272 ( < 1 % )
     Dedicated logic registers : 43 / 6,272 ( < 1 % )
 Total registers : 43
 Total pins : 10 / 92 ( 11 % )
