@@ -44,6 +44,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "shifterResult[10]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[11]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[12]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[13]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[14]",
+					"strict" : false
+				},
+				{
+					"name" : "shifterResult[15]",
+					"strict" : false
+				},
+				{
 					"name" : "segments[0]",
 					"strict" : false
 				},
@@ -88,11 +112,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "selector[2]",
-					"strict" : false
-				},
-				{
-					"name" : "selector[3]",
+					"name" : "selector[0]",
 					"strict" : false
 				},
 				{
@@ -100,7 +120,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "selector[0]",
+					"name" : "selector[2]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[3]",
 					"strict" : false
 				},
 				{

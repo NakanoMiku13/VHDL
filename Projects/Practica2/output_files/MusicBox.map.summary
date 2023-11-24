@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Nov  9 16:25:24 2023
+Analysis & Synthesis Status : Successful - Mon Nov 13 15:14:54 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : MusicBox
 Top-level Entity Name : MusicBox
 Family : Cyclone IV E
-Total logic elements : 122
-    Total combinational functions : 115
+Total logic elements : 129
+    Total combinational functions : 122
     Dedicated logic registers : 74
 Total registers : 74
 Total pins : 17

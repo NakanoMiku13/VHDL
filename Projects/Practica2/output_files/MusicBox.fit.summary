@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Nov  9 16:25:27 2023
+Fitter Status : Successful - Mon Nov 13 15:14:58 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : MusicBox
 Top-level Entity Name : MusicBox
 Family : Cyclone IV E
 Device : EP4CE6E22C6
 Timing Models : Final
-Total logic elements : 124 / 6,272 ( 2 % )
-    Total combinational functions : 115 / 6,272 ( 2 % )
+Total logic elements : 132 / 6,272 ( 2 % )
+    Total combinational functions : 122 / 6,272 ( 2 % )
     Dedicated logic registers : 74 / 6,272 ( 1 % )
 Total registers : 74
 Total pins : 17 / 92 ( 18 % )

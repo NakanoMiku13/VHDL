@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity BinaryToBCD is
-    Port ( input : in  STD_LOGIC_VECTOR (9 downto 0);
+    Port ( input : in  STD_LOGIC_VECTOR (15 downto 0);
            clock, reset : in  STD_LOGIC;
            output : out  STD_LOGIC_VECTOR (15 downto 0)
           );
