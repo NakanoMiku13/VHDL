@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Tue Nov 21 15:34:17 2023
+Fri Nov 24 16:49:03 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -147,15 +147,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 21 15:34:17 2023          ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 24 16:49:03 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; ALU                                            ;
 ; Top-level Entity Name              ; ALU                                            ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 2,172                                          ;
-;     Total combinational functions  ; 2,170                                          ;
-;     Dedicated logic registers      ; 370                                            ;
-; Total registers                    ; 370                                            ;
+; Total logic elements               ; 2,167                                          ;
+;     Total combinational functions  ; 2,165                                          ;
+;     Dedicated logic registers      ; 371                                            ;
+; Total registers                    ; 371                                            ;
 ; Total pins                         ; 39                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -309,20 +309,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 2,172       ;
+; Estimated Total logic elements              ; 2,167       ;
 ;                                             ;             ;
-; Total combinational functions               ; 2170        ;
+; Total combinational functions               ; 2165        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 682         ;
-;     -- 3 input functions                    ; 573         ;
-;     -- <=2 input functions                  ; 915         ;
+;     -- 4 input functions                    ; 676         ;
+;     -- 3 input functions                    ; 600         ;
+;     -- <=2 input functions                  ; 889         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 1575        ;
+;     -- normal mode                          ; 1570        ;
 ;     -- arithmetic mode                      ; 595         ;
 ;                                             ;             ;
-; Total registers                             ; 370         ;
-;     -- Dedicated logic registers            ; 370         ;
+; Total registers                             ; 371         ;
+;     -- Dedicated logic registers            ; 371         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 39          ;
@@ -330,9 +330,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 380         ;
-; Total fan-out                               ; 7404        ;
-; Average fan-out                             ; 2.83        ;
+; Maximum fan-out                             ; 381         ;
+; Total fan-out                               ; 7419        ;
+; Average fan-out                             ; 2.84        ;
 +---------------------------------------------+-------------+
 
 
@@ -341,9 +341,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Entity Name          ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |ALU                                      ; 2170 (90)           ; 370 (0)                   ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |ALU                                                                                                                 ; ALU                  ; work         ;
+; |ALU                                      ; 2165 (90)           ; 371 (0)                   ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |ALU                                                                                                                 ; ALU                  ; work         ;
 ;    |ArithmeticShiftRight:ASRShift|        ; 87 (87)             ; 67 (67)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|ArithmeticShiftRight:ASRShift                                                                                   ; ArithmeticShiftRight ; work         ;
-;    |BinaryToBCD:BCD|                      ; 1458 (12)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD                                                                                                 ; BinaryToBCD          ; work         ;
+;    |BinaryToBCD:BCD|                      ; 1449 (13)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD                                                                                                 ; BinaryToBCD          ; work         ;
 ;       |lpm_divide:Div0|                   ; 169 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
 ;          |lpm_divide_fkm:auto_generated|  ; 169 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div0|lpm_divide_fkm:auto_generated                                                   ; lpm_divide_fkm       ; work         ;
 ;             |sign_div_unsign_7nh:divider| ; 169 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Div0|lpm_divide_fkm:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh  ; work         ;
@@ -360,17 +360,17 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_ocm:auto_generated|  ; 244 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm       ; work         ;
 ;             |sign_div_unsign_dnh:divider| ; 244 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh  ; work         ;
 ;                |alt_u_div_eaf:divider|    ; 244 (244)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf        ; work         ;
-;       |lpm_divide:Mod1|                   ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_ocm:auto_generated|  ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm       ; work         ;
-;             |sign_div_unsign_dnh:divider| ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh  ; work         ;
-;                |alt_u_div_eaf:divider|    ; 324 (324)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf        ; work         ;
+;       |lpm_divide:Mod1|                   ; 314 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_ocm:auto_generated|  ; 314 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm       ; work         ;
+;             |sign_div_unsign_dnh:divider| ; 314 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh  ; work         ;
+;                |alt_u_div_eaf:divider|    ; 314 (314)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf        ; work         ;
 ;       |lpm_divide:Mod2|                   ; 357 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2                                                                                 ; lpm_divide           ; work         ;
 ;          |lpm_divide_ocm:auto_generated|  ; 357 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm       ; work         ;
 ;             |sign_div_unsign_dnh:divider| ; 357 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh  ; work         ;
 ;                |alt_u_div_eaf:divider|    ; 357 (357)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|BinaryToBCD:BCD|lpm_divide:Mod2|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf        ; work         ;
 ;    |DecoderBCD:Decoder|                   ; 28 (28)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|DecoderBCD:Decoder                                                                                              ; DecoderBCD           ; work         ;
 ;    |Display:PrintArithResult|             ; 294 (294)           ; 141 (141)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|Display:PrintArithResult                                                                                        ; Display              ; work         ;
-;    |Display:PrintMessage|                 ; 173 (173)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|Display:PrintMessage                                                                                            ; Display              ; work         ;
+;    |Display:PrintMessage|                 ; 177 (177)           ; 81 (81)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|Display:PrintMessage                                                                                            ; Display              ; work         ;
 ;    |LeftShifter:LfShift|                  ; 40 (40)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|LeftShifter:LfShift                                                                                             ; LeftShifter          ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -381,133 +381,135 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; arithResult[0]                                      ; Mux60               ; yes                    ;
-; arithResult[1]                                      ; Mux60               ; yes                    ;
-; arithResult[2]                                      ; Mux60               ; yes                    ;
-; arithResult[3]                                      ; Mux60               ; yes                    ;
-; arithResult[10]                                     ; Mux60               ; yes                    ;
-; arithResult[7]                                      ; Mux60               ; yes                    ;
-; arithResult[8]                                      ; Mux60               ; yes                    ;
-; arithResult[9]                                      ; Mux60               ; yes                    ;
-; arithResult[11]                                     ; Mux60               ; yes                    ;
-; arithResult[12]                                     ; Mux60               ; yes                    ;
-; arithResult[13]                                     ; Mux60               ; yes                    ;
-; arithResult[4]                                      ; Mux60               ; yes                    ;
-; arithResult[5]                                      ; Mux60               ; yes                    ;
-; arithResult[6]                                      ; Mux60               ; yes                    ;
-; arithResult[15]                                     ; Mux60               ; yes                    ;
-; arithResult[14]                                     ; Mux60               ; yes                    ;
+; arithResult[0]                                      ; Mux108              ; yes                    ;
+; arithResult[1]                                      ; Mux108              ; yes                    ;
+; arithResult[2]                                      ; Mux108              ; yes                    ;
+; arithResult[3]                                      ; Mux108              ; yes                    ;
+; arithResult[10]                                     ; Mux108              ; yes                    ;
+; arithResult[7]                                      ; Mux108              ; yes                    ;
+; arithResult[8]                                      ; Mux108              ; yes                    ;
+; arithResult[9]                                      ; Mux108              ; yes                    ;
+; arithResult[11]                                     ; Mux108              ; yes                    ;
+; arithResult[12]                                     ; Mux108              ; yes                    ;
+; arithResult[13]                                     ; Mux108              ; yes                    ;
+; arithResult[4]                                      ; Mux108              ; yes                    ;
+; arithResult[5]                                      ; Mux108              ; yes                    ;
+; arithResult[6]                                      ; Mux108              ; yes                    ;
+; arithResult[15]                                     ; Mux108              ; yes                    ;
+; arithResult[14]                                     ; Mux108              ; yes                    ;
 ; Number of user-specified and inferred latches = 16  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                      ;
-+-------------------------------------------------+-------------------------------------------------------+
-; Register name                                   ; Reason for Removal                                    ;
-+-------------------------------------------------+-------------------------------------------------------+
-; ArithmeticShiftRight:ASRShift|counter2[4..31]   ; Stuck at GND due to stuck port data_in                ;
-; LeftShifter:LfShift|counter2[5..31]             ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter[0..31]       ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter2[3..31]      ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter2[0..2]       ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter3[4..31]      ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter3[1..3]       ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter3[0]          ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter4[5..31]      ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter4[4]          ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter4[3]          ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter4[2]          ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter4[1]          ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintArithResult|segmenter4[0]          ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintMessage|segmenter[0..31]           ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter2[3..31]          ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter2[0..2]           ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintMessage|segmenter3[4..31]          ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter3[1..3]           ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintMessage|segmenter3[0]              ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter4[5..31]          ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter4[4]              ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintMessage|segmenter4[3]              ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter4[2]              ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintMessage|segmenter4[1]              ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|segmenter4[0]              ; Stuck at VCC due to stuck port data_in                ;
-; ArithmeticShiftRight:ASRShift|aux[0]            ; Stuck at VCC due to stuck port data_in                ;
-; ArithmeticShiftRight:ASRShift|shifterOutput[15] ; Stuck at VCC due to stuck port data_in                ;
-; ArithmeticShiftRight:ASRShift|shifterResult[15] ; Stuck at VCC due to stuck port data_in                ;
-; Display:PrintArithResult|counter4[2..30]        ; Merged with Display:PrintArithResult|counter4[31]     ;
-; Display:PrintMessage|counter4[2..30]            ; Merged with Display:PrintMessage|counter4[31]         ;
-; LeftShifter:LfShift|counter[31]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[31] ;
-; LeftShifter:LfShift|counter[30]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[30] ;
-; LeftShifter:LfShift|counter[29]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[29] ;
-; LeftShifter:LfShift|counter[28]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[28] ;
-; LeftShifter:LfShift|counter[27]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[27] ;
-; LeftShifter:LfShift|counter[26]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[26] ;
-; LeftShifter:LfShift|counter[25]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[25] ;
-; LeftShifter:LfShift|counter[24]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[24] ;
-; LeftShifter:LfShift|counter[23]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[23] ;
-; LeftShifter:LfShift|counter[21]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[21] ;
-; LeftShifter:LfShift|counter[20]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[20] ;
-; LeftShifter:LfShift|counter[17]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[17] ;
-; LeftShifter:LfShift|counter[16]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[16] ;
-; LeftShifter:LfShift|counter[15]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[15] ;
-; LeftShifter:LfShift|counter[13]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[13] ;
-; LeftShifter:LfShift|counter[12]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[12] ;
-; LeftShifter:LfShift|counter[10]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[10] ;
-; LeftShifter:LfShift|counter[7]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[7]  ;
-; LeftShifter:LfShift|counter[5]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[5]  ;
-; LeftShifter:LfShift|counter[4]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[4]  ;
-; LeftShifter:LfShift|counter[3]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[3]  ;
-; LeftShifter:LfShift|counter[2]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[2]  ;
-; LeftShifter:LfShift|counter[1]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[1]  ;
-; LeftShifter:LfShift|counter[0]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[0]  ;
-; LeftShifter:LfShift|counter[22]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[22] ;
-; LeftShifter:LfShift|counter[19]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[19] ;
-; LeftShifter:LfShift|counter[18]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[18] ;
-; LeftShifter:LfShift|counter[14]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[14] ;
-; LeftShifter:LfShift|counter[11]                 ; Merged with ArithmeticShiftRight:ASRShift|counter[11] ;
-; LeftShifter:LfShift|counter[9]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[9]  ;
-; LeftShifter:LfShift|counter[8]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[8]  ;
-; LeftShifter:LfShift|counter[6]                  ; Merged with ArithmeticShiftRight:ASRShift|counter[6]  ;
-; Display:PrintMessage|counter3[31]               ; Merged with Display:PrintArithResult|counter3[31]     ;
-; Display:PrintMessage|counter3[30]               ; Merged with Display:PrintArithResult|counter3[30]     ;
-; Display:PrintMessage|counter3[29]               ; Merged with Display:PrintArithResult|counter3[29]     ;
-; Display:PrintMessage|counter3[28]               ; Merged with Display:PrintArithResult|counter3[28]     ;
-; Display:PrintMessage|counter3[27]               ; Merged with Display:PrintArithResult|counter3[27]     ;
-; Display:PrintMessage|counter3[26]               ; Merged with Display:PrintArithResult|counter3[26]     ;
-; Display:PrintMessage|counter3[25]               ; Merged with Display:PrintArithResult|counter3[25]     ;
-; Display:PrintMessage|counter3[24]               ; Merged with Display:PrintArithResult|counter3[24]     ;
-; Display:PrintMessage|counter3[23]               ; Merged with Display:PrintArithResult|counter3[23]     ;
-; Display:PrintMessage|counter3[22]               ; Merged with Display:PrintArithResult|counter3[22]     ;
-; Display:PrintMessage|counter3[21]               ; Merged with Display:PrintArithResult|counter3[21]     ;
-; Display:PrintMessage|counter3[20]               ; Merged with Display:PrintArithResult|counter3[20]     ;
-; Display:PrintMessage|counter3[19]               ; Merged with Display:PrintArithResult|counter3[19]     ;
-; Display:PrintMessage|counter3[18]               ; Merged with Display:PrintArithResult|counter3[18]     ;
-; Display:PrintMessage|counter3[17]               ; Merged with Display:PrintArithResult|counter3[17]     ;
-; Display:PrintMessage|counter3[16]               ; Merged with Display:PrintArithResult|counter3[16]     ;
-; Display:PrintMessage|counter3[13]               ; Merged with Display:PrintArithResult|counter3[13]     ;
-; Display:PrintMessage|counter3[12]               ; Merged with Display:PrintArithResult|counter3[12]     ;
-; Display:PrintMessage|counter3[11]               ; Merged with Display:PrintArithResult|counter3[11]     ;
-; Display:PrintMessage|counter3[10]               ; Merged with Display:PrintArithResult|counter3[10]     ;
-; Display:PrintMessage|counter3[7]                ; Merged with Display:PrintArithResult|counter3[7]      ;
-; Display:PrintMessage|counter3[5]                ; Merged with Display:PrintArithResult|counter3[5]      ;
-; Display:PrintMessage|counter3[3]                ; Merged with Display:PrintArithResult|counter3[3]      ;
-; Display:PrintMessage|counter3[2]                ; Merged with Display:PrintArithResult|counter3[2]      ;
-; Display:PrintMessage|counter3[1]                ; Merged with Display:PrintArithResult|counter3[1]      ;
-; Display:PrintMessage|counter3[0]                ; Merged with Display:PrintArithResult|counter3[0]      ;
-; Display:PrintMessage|counter3[15]               ; Merged with Display:PrintArithResult|counter3[15]     ;
-; Display:PrintMessage|counter3[14]               ; Merged with Display:PrintArithResult|counter3[14]     ;
-; Display:PrintMessage|counter3[9]                ; Merged with Display:PrintArithResult|counter3[9]      ;
-; Display:PrintMessage|counter3[8]                ; Merged with Display:PrintArithResult|counter3[8]      ;
-; Display:PrintMessage|counter3[6]                ; Merged with Display:PrintArithResult|counter3[6]      ;
-; Display:PrintMessage|counter3[4]                ; Merged with Display:PrintArithResult|counter3[4]      ;
-; Display:PrintArithResult|counter4[31]           ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|counter4[31]               ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|message2[0..27]            ; Stuck at GND due to stuck port data_in                ;
-; Display:PrintMessage|message[19]                ; Merged with Display:PrintMessage|message[14]          ;
-; Total Number of Removed Registers = 467         ;                                                       ;
-+-------------------------------------------------+-------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                       ;
++------------------------------------------------------------------+-------------------------------------------------------+
+; Register name                                                    ; Reason for Removal                                    ;
++------------------------------------------------------------------+-------------------------------------------------------+
+; ArithmeticShiftRight:ASRShift|counter2[4..31]                    ; Stuck at GND due to stuck port data_in                ;
+; LeftShifter:LfShift|counter2[5..31]                              ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter[0..31]                        ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter2[3..31]                       ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter2[0..2]                        ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter3[4..31]                       ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter3[1..3]                        ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter3[0]                           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[5..31]                       ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[4]                           ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[3]                           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[2]                           ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[1]                           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintArithResult|segmenter4[0]                           ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter[0..31]                            ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter2[3..31]                           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter2[0..2]                            ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter3[4..31]                           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter3[1..3]                            ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter3[0]                               ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[5..31]                           ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[4]                               ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[3]                               ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[2]                               ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[1]                               ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|segmenter4[0]                               ; Stuck at VCC due to stuck port data_in                ;
+; ArithmeticShiftRight:ASRShift|aux[0]                             ; Stuck at VCC due to stuck port data_in                ;
+; ArithmeticShiftRight:ASRShift|shifterOutput[15]                  ; Stuck at VCC due to stuck port data_in                ;
+; ArithmeticShiftRight:ASRShift|shifterResult[15]                  ; Stuck at VCC due to stuck port data_in                ;
+; Display:PrintArithResult|counter4[2..30]                         ; Merged with Display:PrintArithResult|counter4[31]     ;
+; Display:PrintMessage|counter4[2..30]                             ; Merged with Display:PrintMessage|counter4[31]         ;
+; LeftShifter:LfShift|counter[31]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[31] ;
+; LeftShifter:LfShift|counter[30]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[30] ;
+; LeftShifter:LfShift|counter[29]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[29] ;
+; LeftShifter:LfShift|counter[28]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[28] ;
+; LeftShifter:LfShift|counter[27]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[27] ;
+; LeftShifter:LfShift|counter[26]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[26] ;
+; LeftShifter:LfShift|counter[25]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[25] ;
+; LeftShifter:LfShift|counter[24]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[24] ;
+; LeftShifter:LfShift|counter[23]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[23] ;
+; LeftShifter:LfShift|counter[21]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[21] ;
+; LeftShifter:LfShift|counter[20]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[20] ;
+; LeftShifter:LfShift|counter[17]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[17] ;
+; LeftShifter:LfShift|counter[16]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[16] ;
+; LeftShifter:LfShift|counter[15]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[15] ;
+; LeftShifter:LfShift|counter[13]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[13] ;
+; LeftShifter:LfShift|counter[12]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[12] ;
+; LeftShifter:LfShift|counter[10]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[10] ;
+; LeftShifter:LfShift|counter[7]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[7]  ;
+; LeftShifter:LfShift|counter[5]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[5]  ;
+; LeftShifter:LfShift|counter[4]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[4]  ;
+; LeftShifter:LfShift|counter[3]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[3]  ;
+; LeftShifter:LfShift|counter[2]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[2]  ;
+; LeftShifter:LfShift|counter[1]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[1]  ;
+; LeftShifter:LfShift|counter[0]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[0]  ;
+; LeftShifter:LfShift|counter[22]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[22] ;
+; LeftShifter:LfShift|counter[19]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[19] ;
+; LeftShifter:LfShift|counter[18]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[18] ;
+; LeftShifter:LfShift|counter[14]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[14] ;
+; LeftShifter:LfShift|counter[11]                                  ; Merged with ArithmeticShiftRight:ASRShift|counter[11] ;
+; LeftShifter:LfShift|counter[9]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[9]  ;
+; LeftShifter:LfShift|counter[8]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[8]  ;
+; LeftShifter:LfShift|counter[6]                                   ; Merged with ArithmeticShiftRight:ASRShift|counter[6]  ;
+; Display:PrintMessage|counter3[31]                                ; Merged with Display:PrintArithResult|counter3[31]     ;
+; Display:PrintMessage|counter3[30]                                ; Merged with Display:PrintArithResult|counter3[30]     ;
+; Display:PrintMessage|counter3[29]                                ; Merged with Display:PrintArithResult|counter3[29]     ;
+; Display:PrintMessage|counter3[28]                                ; Merged with Display:PrintArithResult|counter3[28]     ;
+; Display:PrintMessage|counter3[27]                                ; Merged with Display:PrintArithResult|counter3[27]     ;
+; Display:PrintMessage|counter3[26]                                ; Merged with Display:PrintArithResult|counter3[26]     ;
+; Display:PrintMessage|counter3[25]                                ; Merged with Display:PrintArithResult|counter3[25]     ;
+; Display:PrintMessage|counter3[24]                                ; Merged with Display:PrintArithResult|counter3[24]     ;
+; Display:PrintMessage|counter3[23]                                ; Merged with Display:PrintArithResult|counter3[23]     ;
+; Display:PrintMessage|counter3[22]                                ; Merged with Display:PrintArithResult|counter3[22]     ;
+; Display:PrintMessage|counter3[21]                                ; Merged with Display:PrintArithResult|counter3[21]     ;
+; Display:PrintMessage|counter3[20]                                ; Merged with Display:PrintArithResult|counter3[20]     ;
+; Display:PrintMessage|counter3[19]                                ; Merged with Display:PrintArithResult|counter3[19]     ;
+; Display:PrintMessage|counter3[18]                                ; Merged with Display:PrintArithResult|counter3[18]     ;
+; Display:PrintMessage|counter3[17]                                ; Merged with Display:PrintArithResult|counter3[17]     ;
+; Display:PrintMessage|counter3[16]                                ; Merged with Display:PrintArithResult|counter3[16]     ;
+; Display:PrintMessage|counter3[13]                                ; Merged with Display:PrintArithResult|counter3[13]     ;
+; Display:PrintMessage|counter3[12]                                ; Merged with Display:PrintArithResult|counter3[12]     ;
+; Display:PrintMessage|counter3[11]                                ; Merged with Display:PrintArithResult|counter3[11]     ;
+; Display:PrintMessage|counter3[10]                                ; Merged with Display:PrintArithResult|counter3[10]     ;
+; Display:PrintMessage|counter3[7]                                 ; Merged with Display:PrintArithResult|counter3[7]      ;
+; Display:PrintMessage|counter3[5]                                 ; Merged with Display:PrintArithResult|counter3[5]      ;
+; Display:PrintMessage|counter3[3]                                 ; Merged with Display:PrintArithResult|counter3[3]      ;
+; Display:PrintMessage|counter3[2]                                 ; Merged with Display:PrintArithResult|counter3[2]      ;
+; Display:PrintMessage|counter3[1]                                 ; Merged with Display:PrintArithResult|counter3[1]      ;
+; Display:PrintMessage|counter3[0]                                 ; Merged with Display:PrintArithResult|counter3[0]      ;
+; Display:PrintMessage|counter3[15]                                ; Merged with Display:PrintArithResult|counter3[15]     ;
+; Display:PrintMessage|counter3[14]                                ; Merged with Display:PrintArithResult|counter3[14]     ;
+; Display:PrintMessage|counter3[9]                                 ; Merged with Display:PrintArithResult|counter3[9]      ;
+; Display:PrintMessage|counter3[8]                                 ; Merged with Display:PrintArithResult|counter3[8]      ;
+; Display:PrintMessage|counter3[6]                                 ; Merged with Display:PrintArithResult|counter3[6]      ;
+; Display:PrintMessage|counter3[4]                                 ; Merged with Display:PrintArithResult|counter3[4]      ;
+; Display:PrintMessage|message2[3,12,14,17..21,24]                 ; Merged with Display:PrintMessage|message2[0]          ;
+; Display:PrintMessage|message2[1,2,4..9,11,13,15,16,22,23,25..27] ; Merged with Display:PrintMessage|message2[10]         ;
+; Display:PrintMessage|message[19]                                 ; Merged with Display:PrintMessage|message[14]          ;
+; Display:PrintArithResult|counter4[31]                            ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|counter4[31]                                ; Stuck at GND due to stuck port data_in                ;
+; Display:PrintMessage|message2[0]                                 ; Stuck at GND due to stuck port data_in                ;
+; Total Number of Removed Registers = 466                          ;                                                       ;
++------------------------------------------------------------------+-------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -525,7 +527,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 370   ;
+; Total registers                              ; 371   ;
 ; Number of registers using Synchronous Clear  ; 64    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 284   ;
@@ -616,12 +618,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; 16:1               ; 7 bits    ; 70 LEs        ; 21 LEs               ; 49 LEs                 ; Yes        ; |ALU|Display:PrintArithResult|segments[0] ;
 ; 16:1               ; 7 bits    ; 70 LEs        ; 21 LEs               ; 49 LEs                 ; Yes        ; |ALU|Display:PrintMessage|segments[6]     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |ALU|Mux75                                ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ALU|Mux66                                ;
-; 16:1               ; 11 bits   ; 110 LEs       ; 22 LEs               ; 88 LEs                 ; No         ; |ALU|Mux55                                ;
-; 16:1               ; 15 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; No         ; |ALU|Mux18                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |ALU|Mux68                                ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |ALU|Mux75                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |ALU|Mux123                               ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ALU|Mux114                               ;
+; 16:1               ; 11 bits   ; 110 LEs       ; 22 LEs               ; 88 LEs                 ; No         ; |ALU|Mux76                                ;
+; 16:1               ; 15 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; No         ; |ALU|Mux39                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |ALU|Mux116                               ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |ALU|Mux123                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
@@ -1778,26 +1780,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 39                          ;
-; cycloneiii_ff         ; 370                         ;
+; cycloneiii_ff         ; 371                         ;
 ;     CLR               ; 131                         ;
 ;     CLR SCLR          ; 64                          ;
 ;     ENA               ; 68                          ;
 ;     ENA CLR           ; 89                          ;
-;     plain             ; 18                          ;
-; cycloneiii_lcell_comb ; 2172                        ;
+;     plain             ; 19                          ;
+; cycloneiii_lcell_comb ; 2167                        ;
 ;     arith             ; 595                         ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 155                         ;
 ;         3 data inputs ; 431                         ;
-;     normal            ; 1577                        ;
+;     normal            ; 1572                        ;
 ;         0 data inputs ; 62                          ;
-;         1 data inputs ; 55                          ;
-;         2 data inputs ; 636                         ;
-;         3 data inputs ; 142                         ;
-;         4 data inputs ; 682                         ;
+;         1 data inputs ; 47                          ;
+;         2 data inputs ; 618                         ;
+;         3 data inputs ; 169                         ;
+;         4 data inputs ; 676                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 38.40                       ;
-; Average LUT depth     ; 21.15                       ;
+; Max LUT depth         ; 37.70                       ;
+; Average LUT depth     ; 20.94                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1816,7 +1818,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Tue Nov 21 15:34:08 2023
+    Info: Processing started: Fri Nov 24 16:48:54 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1857,61 +1859,60 @@ Info (12021): Found 2 design units, including 1 entities, in source file Compari
     Info (12022): Found design unit 1: Comparison-ArchComparison File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Comparison.vhd Line: 9
     Info (12023): Found entity 1: Comparison File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Comparison.vhd Line: 3
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ALU.vhd(19): used implicit default value for signal "dp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 19
 Warning (10540): VHDL Signal Declaration warning at ALU.vhd(24): used explicit default value for signal "B" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 24
 Warning (10540): VHDL Signal Declaration warning at ALU.vhd(25): used explicit default value for signal "A" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 25
 Warning (10540): VHDL Signal Declaration warning at ALU.vhd(32): used explicit default value for signal "cons" because signal was never assigned a value File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 32
-Warning (10492): VHDL Process Statement warning at ALU.vhd(125): signal "leftShifterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at ALU.vhd(125): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at ALU.vhd(125): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at ALU.vhd(126): signal "asrShifterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 126
-Warning (10492): VHDL Process Statement warning at ALU.vhd(126): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 126
-Warning (10492): VHDL Process Statement warning at ALU.vhd(126): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 126
-Warning (10492): VHDL Process Statement warning at ALU.vhd(128): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at ALU.vhd(127): signal "leftShifterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at ALU.vhd(127): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at ALU.vhd(127): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at ALU.vhd(128): signal "asrShifterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 128
 Warning (10492): VHDL Process Statement warning at ALU.vhd(128): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 128
 Warning (10492): VHDL Process Statement warning at ALU.vhd(128): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 128
-Warning (10492): VHDL Process Statement warning at ALU.vhd(129): signal "complementOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 129
-Warning (10492): VHDL Process Statement warning at ALU.vhd(129): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 129
-Warning (10492): VHDL Process Statement warning at ALU.vhd(129): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 129
 Warning (10492): VHDL Process Statement warning at ALU.vhd(130): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at ALU.vhd(130): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 130
 Warning (10492): VHDL Process Statement warning at ALU.vhd(130): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 130
 Warning (10492): VHDL Process Statement warning at ALU.vhd(130): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at ALU.vhd(131): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at ALU.vhd(131): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at ALU.vhd(131): signal "complementOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 131
 Warning (10492): VHDL Process Statement warning at ALU.vhd(131): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 131
 Warning (10492): VHDL Process Statement warning at ALU.vhd(131): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at ALU.vhd(136): signal "partialSumABLSB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 136
-Warning (10492): VHDL Process Statement warning at ALU.vhd(137): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 137
-Warning (10492): VHDL Process Statement warning at ALU.vhd(138): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 138
-Warning (10492): VHDL Process Statement warning at ALU.vhd(144): signal "partialSubABLSB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 144
-Warning (10492): VHDL Process Statement warning at ALU.vhd(145): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 145
-Warning (10492): VHDL Process Statement warning at ALU.vhd(146): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 146
-Warning (10492): VHDL Process Statement warning at ALU.vhd(152): signal "productResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 152
-Warning (10492): VHDL Process Statement warning at ALU.vhd(153): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 153
-Warning (10492): VHDL Process Statement warning at ALU.vhd(154): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 154
-Warning (10492): VHDL Process Statement warning at ALU.vhd(162): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 162
-Warning (10492): VHDL Process Statement warning at ALU.vhd(163): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 163
-Warning (10492): VHDL Process Statement warning at ALU.vhd(164): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 164
-Warning (10492): VHDL Process Statement warning at ALU.vhd(170): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 170
-Warning (10492): VHDL Process Statement warning at ALU.vhd(171): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 171
-Warning (10492): VHDL Process Statement warning at ALU.vhd(172): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 172
-Warning (10492): VHDL Process Statement warning at ALU.vhd(178): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 178
-Warning (10492): VHDL Process Statement warning at ALU.vhd(179): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 179
-Warning (10492): VHDL Process Statement warning at ALU.vhd(180): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 180
-Warning (10492): VHDL Process Statement warning at ALU.vhd(186): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 186
-Warning (10492): VHDL Process Statement warning at ALU.vhd(187): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 187
-Warning (10492): VHDL Process Statement warning at ALU.vhd(188): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 188
-Warning (10492): VHDL Process Statement warning at ALU.vhd(197): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 197
-Warning (10492): VHDL Process Statement warning at ALU.vhd(197): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 197
-Warning (10492): VHDL Process Statement warning at ALU.vhd(200): signal "equal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 200
-Warning (10492): VHDL Process Statement warning at ALU.vhd(201): signal "higherInput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 201
-Warning (10492): VHDL Process Statement warning at ALU.vhd(202): signal "lowerInput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 202
-Warning (10492): VHDL Process Statement warning at ALU.vhd(225): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 225
-Warning (10492): VHDL Process Statement warning at ALU.vhd(226): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 226
-Warning (10631): VHDL Process Statement warning at ALU.vhd(118): inferring latch(es) for signal or variable "displayMessage3", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at ALU.vhd(132): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at ALU.vhd(132): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at ALU.vhd(132): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at ALU.vhd(132): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at ALU.vhd(133): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at ALU.vhd(133): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at ALU.vhd(133): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at ALU.vhd(133): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at ALU.vhd(138): signal "partialSumABLSB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 138
+Warning (10492): VHDL Process Statement warning at ALU.vhd(139): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 139
+Warning (10492): VHDL Process Statement warning at ALU.vhd(140): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at ALU.vhd(146): signal "partialSubABLSB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 146
+Warning (10492): VHDL Process Statement warning at ALU.vhd(147): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at ALU.vhd(148): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at ALU.vhd(154): signal "productResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at ALU.vhd(155): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at ALU.vhd(156): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at ALU.vhd(164): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at ALU.vhd(165): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at ALU.vhd(166): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at ALU.vhd(172): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at ALU.vhd(173): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at ALU.vhd(174): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at ALU.vhd(180): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at ALU.vhd(181): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at ALU.vhd(182): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at ALU.vhd(188): signal "fetchResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at ALU.vhd(189): signal "digitsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 189
+Warning (10492): VHDL Process Statement warning at ALU.vhd(190): signal "segmentsOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at ALU.vhd(199): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 199
+Warning (10492): VHDL Process Statement warning at ALU.vhd(201): signal "equal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 201
+Warning (10492): VHDL Process Statement warning at ALU.vhd(203): signal "higherInput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 203
+Warning (10492): VHDL Process Statement warning at ALU.vhd(205): signal "lowerInput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 205
+Warning (10492): VHDL Process Statement warning at ALU.vhd(207): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 207
+Warning (10492): VHDL Process Statement warning at ALU.vhd(218): signal "digitsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 218
+Warning (10492): VHDL Process Statement warning at ALU.vhd(219): signal "segmentsOutput2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 219
 Warning (10631): VHDL Process Statement warning at ALU.vhd(118): inferring latch(es) for signal or variable "arithResult", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
 Warning (10631): VHDL Process Statement warning at ALU.vhd(118): inferring latch(es) for signal or variable "flags", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Warning (10873): Using initial value X (don't care) for net "dp" at ALU.vhd(19) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 19
 Info (10041): Inferred latch for "flags[0]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
 Info (10041): Inferred latch for "flags[1]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
 Info (10041): Inferred latch for "flags[2]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
@@ -1932,34 +1933,6 @@ Info (10041): Inferred latch for "arithResult[12]" at ALU.vhd(118) File: /mnt/Ex
 Info (10041): Inferred latch for "arithResult[13]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
 Info (10041): Inferred latch for "arithResult[14]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
 Info (10041): Inferred latch for "arithResult[15]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[0]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[1]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[2]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[3]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[4]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[5]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[6]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[7]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[8]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[9]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[10]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[11]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[12]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[13]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[14]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[15]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[16]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[17]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[18]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[19]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[20]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[21]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[22]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[23]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[24]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[25]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[26]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-Info (10041): Inferred latch for "displayMessage3[27]" at ALU.vhd(118) File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
 Info (12128): Elaborating entity "LeftShifter" for hierarchy "LeftShifter:LfShift" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 103
 Warning (10492): VHDL Process Statement warning at LeftShifter.vhd(19): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/LeftShifter.vhd Line: 19
 Info (12128): Elaborating entity "ArithmeticShiftRight" for hierarchy "ArithmeticShiftRight:ASRShift" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 104
@@ -1995,8 +1968,8 @@ Warning (10540): VHDL Signal Declaration warning at Display.vhd(14): used explic
 Warning (10036): Verilog HDL or VHDL warning at Display.vhd(34): object "aux" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 34
 Warning (10492): VHDL Process Statement warning at Display.vhd(37): signal "inputMessage" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/Display.vhd Line: 37
 Info (12128): Elaborating entity "Comparison" for hierarchy "Comparison:\compare:0:Compare" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 110
-Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:BCD" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 231
-Info (12128): Elaborating entity "DecoderBCD" for hierarchy "DecoderBCD:Decoder" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 232
+Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:BCD" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 225
+Info (12128): Elaborating entity "DecoderBCD" for hierarchy "DecoderBCD:Decoder" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 226
 Warning (10036): Verilog HDL or VHDL warning at DecoderBCD.vhd(11): object "counter" assigned a value but never read File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd Line: 11
 Warning (10492): VHDL Process Statement warning at DecoderBCD.vhd(39): signal "decodedMessage" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/DecoderBCD.vhd Line: 39
 Info (278001): Inferred 6 megafunctions from design logic
@@ -2145,8 +2118,8 @@ Warning (13004): Presettable and clearable registers converted to equivalent cir
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "flags[0]" is stuck at GND File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
     Warning (13410): Pin "flags[1]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-    Warning (13410): Pin "flags[2]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
-    Warning (13410): Pin "flags[3]" is stuck at GND File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
+    Warning (13410): Pin "flags[2]" is stuck at GND File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
+    Warning (13410): Pin "flags[3]" is stuck at VCC File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 118
     Warning (13410): Pin "dp" is stuck at GND File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 19
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
@@ -2157,28 +2130,19 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_12_result_int[0]~26" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 47
     Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_13_result_int[0]~28" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 52
     Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_14_result_int[0]~30" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 57
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_15_result_int[0]~0" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 62
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_6_result_int[0]~14" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 87
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_7_result_int[0]~16" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 92
     Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_8_result_int[0]~18" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 97
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_9_result_int[0]~20" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 102
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_10_result_int[0]~22" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 37
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_11_result_int[0]~24" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 42
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_12_result_int[0]~26" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 47
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_13_result_int[0]~28" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 52
-    Info (17048): Logic cell "BinaryToBCD:BCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_14_result_int[0]~30" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/db/alt_u_div_eaf.tdf Line: 57
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "inputSelector" File: /mnt/External/Codigos/VHDL/VHDL/Projects/Practica1Arquitectura/ALU.vhd Line: 18
-Info (21057): Implemented 2227 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2222 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 2188 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 166 warnings
-    Info: Peak virtual memory: 447 megabytes
-    Info: Processing ended: Tue Nov 21 15:34:17 2023
+    Info (21061): Implemented 2183 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 165 warnings
+    Info: Peak virtual memory: 456 megabytes
+    Info: Processing ended: Fri Nov 24 16:49:03 2023
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
 
 

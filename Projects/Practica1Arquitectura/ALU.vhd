@@ -118,6 +118,8 @@ begin
 	process(selector)
 		variable auxAdder : std_logic_vector(1 downto 0) := (others => '0');
 		variable auxAdderCarryOut : std_logic_vector(1 downto 0) := (others => '0');
+		variable auxFlag : std_logic;
+		variable auxFlags : std_logic_vector(3 downto 0);
 	begin
 		
 		case selector is
@@ -193,38 +195,29 @@ begin
 				--gfedcba
 				--
 				--
-				flags(0) <= not '1';
-				flags(1) <= not equal(16);
-				flags(2) <= not higherInput(16);
-				flags(3) <= not lowerInput(16);
+				--Negative Flag
+				auxFlags(0) := not A(15);
+				--Equal Flag
+				auxFlags(1) := not equal(16);
+				--Higher Flag
+				auxFlags(2) := not higherInput(16);
+				--Lower Flag
+				auxFlags(3) := not lowerInput(16);
 				displayMessage2 <= "1110111000000000001101101101"; --A IS
-				if B(15) = '1' and A(15) = '1' then
+				if B(15) = '1' OR A(15) = '1' then
 				-- Both negative
-					
-				-- One of both is negative
-				elsif A(15) = '1' and B(15) = '0' then
-					displayMessage3 <= "0111000101110000111000011100"; --Low
-					flags <= not "1001";
-				elsif B(15) = '1' and A(15) = '0' then
-					displayMessage3 <= "1110110000011010111111110110"; --High
-					flags <= not "0100";
-					dp <= '1';
-				else
-					dp <= '1';
-				-- Positive numbers
-					if equal(16) = '1' then
-						displayMessage3 <= "1111001110011101111101110111"; --E9UA
-						flags <= not "0010";
-					elsif higherInput(16) = '1' then
-						displayMessage3 <= "1110110000011010111111110110"; --High
-						flags <= not "0100";
-					else
-						displayMessage3 <= "0111000101110000111000011100"; --Low
-						flags <= not "1000";
-					end if;
+					auxFlag := auxFlags(2);
+					auxFlags(2) := auxFlags(3);
+					auxFlags(3) := auxFlag;
 				end if;
+				case auxFlags is
+				when "0001" | "1001" => displayMessage3 <= "0111000101110000111000011100"; --Low
+				when "0010" | "1010" => displayMessage3 <= "1110110000011010111111110110"; --High
+				when others => displayMessage3 <= "1111001110011101111101110111"; --E9UA
+				end case;
 				digits <= digitsOutput2;
 				segments <= segmentsOutput2;
+				flags <= auxFlags;
 				shifterResult <= (others => '0');
 			when others => shifterResult <= (others => '0'); digits <= (others => '1'); segments <= (others => '1');  displayMessage3 <= (others => '0'); displayMessage2 <= (others => '0');
 		end case;

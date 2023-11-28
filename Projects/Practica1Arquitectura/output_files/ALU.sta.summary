@@ -3,99 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock'
-Slack : -34.480
-TNS   : -557.105
-
-Type  : Slow 1200mV 85C Model Setup 'Display:PrintArithResult|thirdClock'
-Slack : -6.130
-TNS   : -517.055
+Slack : -35.472
+TNS   : -554.881
 
 Type  : Slow 1200mV 85C Model Setup 'Display:PrintMessage|thirdClock'
-Slack : -5.801
-TNS   : -328.290
+Slack : -6.333
+TNS   : -378.589
+
+Type  : Slow 1200mV 85C Model Setup 'Display:PrintArithResult|thirdClock'
+Slack : -6.200
+TNS   : -496.604
 
 Type  : Slow 1200mV 85C Model Setup 'reset'
-Slack : -2.365
-TNS   : -53.488
+Slack : -2.383
+TNS   : -53.358
 
 Type  : Slow 1200mV 85C Model Setup 'selector[0]'
-Slack : -1.701
-TNS   : -10.820
+Slack : -1.812
+TNS   : -10.632
 
 Type  : Slow 1200mV 85C Model Setup 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : -1.435
-TNS   : -38.192
+Slack : -1.532
+TNS   : -36.288
 
 Type  : Slow 1200mV 85C Model Setup 'LeftShifter:LfShift|secondClock'
-Slack : -0.931
-TNS   : -29.426
+Slack : -0.916
+TNS   : -29.575
 
 Type  : Slow 1200mV 85C Model Hold 'Display:PrintArithResult|thirdClock'
-Slack : 0.106
+Slack : 0.054
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Display:PrintMessage|thirdClock'
-Slack : 0.134
+Slack : 0.129
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'LeftShifter:LfShift|secondClock'
-Slack : 0.357
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'ArithmeticShiftRight:ASRShift|secondClock'
 Slack : 0.358
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'ArithmeticShiftRight:ASRShift|secondClock'
+Slack : 0.359
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Hold 'clock'
-Slack : 0.479
+Slack : 0.412
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'selector[0]'
-Slack : 0.593
+Slack : 0.674
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'reset'
-Slack : 1.023
+Slack : 1.219
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'LeftShifter:LfShift|secondClock'
-Slack : -0.170
-TNS   : -2.712
+Slack : -0.169
+TNS   : -2.704
 
 Type  : Slow 1200mV 85C Model Recovery 'clock'
-Slack : 0.006
-TNS   : 0.000
+Slack : -0.003
+TNS   : -0.066
 
 Type  : Slow 1200mV 85C Model Recovery 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : 0.164
+Slack : 0.150
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'Display:PrintMessage|thirdClock'
-Slack : 0.794
+Slack : 0.731
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'Display:PrintArithResult|thirdClock'
-Slack : 1.011
+Slack : 0.978
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'Display:PrintArithResult|thirdClock'
-Slack : -1.128
-TNS   : -90.191
+Slack : -1.116
+TNS   : -88.171
 
 Type  : Slow 1200mV 85C Model Removal 'Display:PrintMessage|thirdClock'
-Slack : -0.902
-TNS   : -71.233
+Slack : -0.849
+TNS   : -66.378
 
 Type  : Slow 1200mV 85C Model Removal 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : -0.245
-TNS   : -3.675
+Slack : -0.234
+TNS   : -3.500
 
 Type  : Slow 1200mV 85C Model Removal 'clock'
-Slack : -0.089
-TNS   : -7.500
+Slack : -0.080
+TNS   : -7.254
 
 Type  : Slow 1200mV 85C Model Removal 'LeftShifter:LfShift|secondClock'
-Slack : 0.101
+Slack : 0.102
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
@@ -116,7 +116,7 @@ TNS   : -108.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Display:PrintMessage|thirdClock'
 Slack : -1.000
-TNS   : -79.000
+TNS   : -80.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'LeftShifter:LfShift|secondClock'
 Slack : -1.000
@@ -127,39 +127,39 @@ Slack : -1.000
 TNS   : -34.000
 
 Type  : Slow 1200mV 0C Model Setup 'clock'
-Slack : -30.620
-TNS   : -483.843
-
-Type  : Slow 1200mV 0C Model Setup 'Display:PrintArithResult|thirdClock'
-Slack : -5.369
-TNS   : -455.909
+Slack : -31.611
+TNS   : -482.695
 
 Type  : Slow 1200mV 0C Model Setup 'Display:PrintMessage|thirdClock'
-Slack : -5.130
-TNS   : -289.233
+Slack : -5.571
+TNS   : -336.104
+
+Type  : Slow 1200mV 0C Model Setup 'Display:PrintArithResult|thirdClock'
+Slack : -5.435
+TNS   : -439.133
 
 Type  : Slow 1200mV 0C Model Setup 'reset'
-Slack : -2.168
-TNS   : -48.517
+Slack : -2.141
+TNS   : -48.375
 
 Type  : Slow 1200mV 0C Model Setup 'selector[0]'
-Slack : -1.613
-TNS   : -10.001
+Slack : -1.644
+TNS   : -9.947
 
 Type  : Slow 1200mV 0C Model Setup 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : -1.206
-TNS   : -31.539
+Slack : -1.310
+TNS   : -30.254
 
 Type  : Slow 1200mV 0C Model Setup 'LeftShifter:LfShift|secondClock'
-Slack : -0.883
-TNS   : -25.831
+Slack : -0.882
+TNS   : -26.026
 
 Type  : Slow 1200mV 0C Model Hold 'Display:PrintArithResult|thirdClock'
-Slack : 0.097
+Slack : 0.032
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Display:PrintMessage|thirdClock'
-Slack : 0.130
+Slack : 0.106
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ArithmeticShiftRight:ASRShift|secondClock'
@@ -171,52 +171,52 @@ Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clock'
-Slack : 0.442
+Slack : 0.362
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'selector[0]'
-Slack : 0.615
+Slack : 0.638
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'reset'
-Slack : 0.907
+Slack : 1.112
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'LeftShifter:LfShift|secondClock'
-Slack : -0.117
-TNS   : -1.860
+Slack : -0.116
+TNS   : -1.849
 
 Type  : Slow 1200mV 0C Model Recovery 'clock'
-Slack : 0.077
+Slack : 0.068
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : 0.187
+Slack : 0.177
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'Display:PrintMessage|thirdClock'
-Slack : 0.778
+Slack : 0.733
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'Display:PrintArithResult|thirdClock'
-Slack : 0.972
+Slack : 0.954
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'Display:PrintArithResult|thirdClock'
-Slack : -1.013
-TNS   : -80.971
+Slack : -1.015
+TNS   : -80.173
 
 Type  : Slow 1200mV 0C Model Removal 'Display:PrintMessage|thirdClock'
-Slack : -0.812
-TNS   : -64.106
+Slack : -0.776
+TNS   : -60.592
 
 Type  : Slow 1200mV 0C Model Removal 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : -0.195
-TNS   : -2.925
+Slack : -0.187
+TNS   : -2.799
 
 Type  : Slow 1200mV 0C Model Removal 'clock'
-Slack : -0.088
-TNS   : -7.540
+Slack : -0.080
+TNS   : -7.296
 
 Type  : Slow 1200mV 0C Model Removal 'LeftShifter:LfShift|secondClock'
 Slack : 0.121
@@ -240,7 +240,7 @@ TNS   : -108.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Display:PrintMessage|thirdClock'
 Slack : -1.000
-TNS   : -79.000
+TNS   : -80.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'LeftShifter:LfShift|secondClock'
 Slack : -1.000
@@ -251,43 +251,43 @@ Slack : -1.000
 TNS   : -34.000
 
 Type  : Fast 1200mV 0C Model Setup 'clock'
-Slack : -19.085
-TNS   : -270.487
-
-Type  : Fast 1200mV 0C Model Setup 'Display:PrintArithResult|thirdClock'
-Slack : -3.030
-TNS   : -247.484
+Slack : -19.588
+TNS   : -274.839
 
 Type  : Fast 1200mV 0C Model Setup 'Display:PrintMessage|thirdClock'
-Slack : -2.800
-TNS   : -147.278
+Slack : -3.151
+TNS   : -182.005
+
+Type  : Fast 1200mV 0C Model Setup 'Display:PrintArithResult|thirdClock'
+Slack : -3.141
+TNS   : -239.317
 
 Type  : Fast 1200mV 0C Model Setup 'reset'
-Slack : -1.407
-TNS   : -31.537
+Slack : -1.425
+TNS   : -31.774
 
 Type  : Fast 1200mV 0C Model Setup 'selector[0]'
-Slack : -1.033
-TNS   : -6.384
-
-Type  : Fast 1200mV 0C Model Setup 'LeftShifter:LfShift|secondClock'
-Slack : -0.573
-TNS   : -11.846
+Slack : -1.095
+TNS   : -6.055
 
 Type  : Fast 1200mV 0C Model Setup 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : -0.551
-TNS   : -11.529
+Slack : -0.602
+TNS   : -11.168
+
+Type  : Fast 1200mV 0C Model Setup 'LeftShifter:LfShift|secondClock'
+Slack : -0.563
+TNS   : -11.320
 
 Type  : Fast 1200mV 0C Model Hold 'Display:PrintArithResult|thirdClock'
-Slack : -0.020
-TNS   : -0.020
+Slack : -0.058
+TNS   : -0.172
 
 Type  : Fast 1200mV 0C Model Hold 'Display:PrintMessage|thirdClock'
-Slack : 0.039
+Slack : 0.033
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : 0.186
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'LeftShifter:LfShift|secondClock'
@@ -295,60 +295,60 @@ Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clock'
-Slack : 0.290
+Slack : 0.216
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'selector[0]'
-Slack : 0.340
+Slack : 0.397
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'reset'
-Slack : 0.609
+Slack : 0.667
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'LeftShifter:LfShift|secondClock'
-Slack : -0.188
-TNS   : -3.000
+Slack : -0.187
+TNS   : -2.980
 
 Type  : Fast 1200mV 0C Model Recovery 'clock'
-Slack : -0.097
-TNS   : -8.883
+Slack : -0.103
+TNS   : -9.143
 
 Type  : Fast 1200mV 0C Model Recovery 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : 0.011
+Slack : 0.003
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'Display:PrintMessage|thirdClock'
-Slack : 0.358
+Slack : 0.309
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'Display:PrintArithResult|thirdClock'
-Slack : 0.503
+Slack : 0.483
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'Display:PrintArithResult|thirdClock'
-Slack : -0.685
-TNS   : -54.746
+Slack : -0.679
+TNS   : -53.484
 
 Type  : Fast 1200mV 0C Model Removal 'Display:PrintMessage|thirdClock'
-Slack : -0.533
-TNS   : -42.085
+Slack : -0.490
+TNS   : -38.175
 
 Type  : Fast 1200mV 0C Model Removal 'ArithmeticShiftRight:ASRShift|secondClock'
-Slack : -0.171
-TNS   : -2.565
+Slack : -0.164
+TNS   : -2.451
 
 Type  : Fast 1200mV 0C Model Removal 'clock'
-Slack : -0.075
-TNS   : -6.391
+Slack : -0.068
+TNS   : -6.231
 
 Type  : Fast 1200mV 0C Model Removal 'LeftShifter:LfShift|secondClock'
-Slack : 0.034
+Slack : 0.035
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -122.621
+TNS   : -122.475
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reset'
 Slack : -3.000
@@ -364,7 +364,7 @@ TNS   : -108.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Display:PrintMessage|thirdClock'
 Slack : -1.000
-TNS   : -79.000
+TNS   : -80.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'LeftShifter:LfShift|secondClock'
 Slack : -1.000
