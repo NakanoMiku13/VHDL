@@ -1,0 +1,3 @@
+# Display digits
+SET_LOCATION_ASSIGNMENT PIN_28 -to outClock
+SET_LOCATION_ASSIGNMENT PIN_23 -to clock

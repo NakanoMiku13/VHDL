@@ -1,0 +1,58 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity lcd_controller is
+port (
+  clk : in STD_LOGIC;
+  reset : in STD_LOGIC;
+  rs : out STD_LOGIC;
+  rw : out STD_LOGIC;
+  en : out STD_LOGIC;
+  d : out STD_LOGIC_VECTOR(7 downto 0);
+  data : in STD_LOGIC_VECTOR(7 downto 0)
+);
+end lcd_controller;
+
+architecture behavioral of lcd_controller is
+signal state : std_logic_vector(1 downto 0);
+begin
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      if reset = '1' then
+        state <= "00";
+      else
+        case state is
+          when "00" =>
+            -- Inicialización
+            rs <= '0';
+            rw <= '0';
+            en <= '1';
+            d <= "00000000";
+            state <= "01";
+          when "01" =>
+            -- Configuración de los pines
+            rs <= '0';
+            rw <= '0';
+            en <= '1';
+            d <= "00000010";
+            state <= "10";
+          when "10" =>
+            -- Configuración del formato
+            rs <= '0';
+            rw <= '0';
+            en <= '1';
+            d <= "00000011";
+            state <= "11";
+          when "11" =>
+            -- Envío de datos
+            rs <= '1';
+            rw <= '0';
+            en <= '1';
+            d <= data;
+            state <= "00";
+        end case;
+      end if;
+    end if;
+  end process;
+end behavioral;

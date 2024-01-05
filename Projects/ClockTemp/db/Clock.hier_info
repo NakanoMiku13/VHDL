@@ -1,0 +1,6 @@
+|Clock
+clock => t.CLK
+clock => outClock~reg0.CLK
+outClock <= outClock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

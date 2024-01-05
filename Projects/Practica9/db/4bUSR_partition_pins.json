@@ -1,0 +1,101 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "shifter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "shifter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "shifter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "shifter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[0]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[1]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[2]",
+					"strict" : false
+				},
+				{
+					"name" : "digits[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[6]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[1]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "input[0]",
+					"strict" : false
+				},
+				{
+					"name" : "input[1]",
+					"strict" : false
+				},
+				{
+					"name" : "input[2]",
+					"strict" : false
+				},
+				{
+					"name" : "input[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

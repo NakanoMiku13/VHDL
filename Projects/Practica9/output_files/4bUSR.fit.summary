@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Dec  7 16:06:51 2023
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : 4bUSR
+Top-level Entity Name : bUSR
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 333 / 6,272 ( 5 % )
+    Total combinational functions : 330 / 6,272 ( 5 % )
+    Dedicated logic registers : 163 / 6,272 ( 3 % )
+Total registers : 163
+Total pins : 23 / 92 ( 25 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity main is
+	Port(
+		push, pop, clock, reset : in std_logic;
+		leds : out std_logic_vector(3 downto 0)
+	);
+end main;
+architecture ArchMain of main is
+begin
+
+end ArchMain;

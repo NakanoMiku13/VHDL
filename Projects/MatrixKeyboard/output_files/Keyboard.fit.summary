@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Dec 18 16:51:16 2023
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : Keyboard
+Top-level Entity Name : Keyboard
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 234 / 6,272 ( 4 % )
+    Total combinational functions : 130 / 6,272 ( 2 % )
+    Dedicated logic registers : 170 / 6,272 ( 3 % )
+Total registers : 170
+Total pins : 14 / 92 ( 15 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
